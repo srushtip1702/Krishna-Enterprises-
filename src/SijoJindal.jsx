@@ -12,17 +12,17 @@ import "./sijo-jindal.css";
 
 const sijoProducts = [
   {
-    size: "14x16",
-    displaySize: "14 × 16",
-    price: 1190,
-    image: "/products/kitchen-sinks/sijo-jindal/SJ 14x16.jpeg",
-  },
-
-  {
     size: "15x12",
     displaySize: "15 × 12",
     price: 1160,
     image: "/products/kitchen-sinks/sijo-jindal/SJ 15x12.jpeg",
+  },
+
+  {
+    size: "14x16",
+    displaySize: "14 × 16",
+    price: 1190,
+    image: "/products/kitchen-sinks/sijo-jindal/SJ 14x16.jpeg",
   },
 
   {
@@ -68,9 +68,7 @@ function SijoJindal() {
 
     <div className="sijo-page">
 
-      {/* =====================================================
-          TOP BAR
-      ===================================================== */}
+      {/* TOP BAR */}
 
       <div className="sijo-topbar">
 
@@ -89,9 +87,7 @@ function SijoJindal() {
       </div>
 
 
-      {/* =====================================================
-          HEADER
-      ===================================================== */}
+      {/* HEADER */}
 
       <header className="sijo-header">
 
@@ -139,9 +135,7 @@ function SijoJindal() {
       </header>
 
 
-      {/* =====================================================
-          HERO
-      ===================================================== */}
+      {/* HERO */}
 
       <section className="sijo-hero">
 
@@ -213,9 +207,7 @@ function SijoJindal() {
       </section>
 
 
-      {/* =====================================================
-          BREADCRUMB
-      ===================================================== */}
+      {/* BREADCRUMB */}
 
       <div className="sijo-breadcrumb">
 
@@ -238,9 +230,7 @@ function SijoJindal() {
       </div>
 
 
-      {/* =====================================================
-          PRODUCT SECTION
-      ===================================================== */}
+      {/* PRODUCTS */}
 
       <main className="sijo-products-section">
 
@@ -280,7 +270,7 @@ function SijoJindal() {
                 key={product.size}
               >
 
-                {/* PRODUCT IMAGE */}
+                {/* IMAGE */}
 
                 <div className="sijo-product-image">
 
@@ -303,7 +293,7 @@ function SijoJindal() {
 
 
                   <div className="sijo-product-number">
-                    0{index + 1}
+                    {String(index + 1).padStart(2, "0")}
                   </div>
 
 
@@ -314,7 +304,7 @@ function SijoJindal() {
                 </div>
 
 
-                {/* PRODUCT DETAILS */}
+                {/* DETAILS */}
 
                 <div className="sijo-product-info">
 
@@ -412,9 +402,7 @@ function SijoJindal() {
       </main>
 
 
-      {/* =====================================================
-          INFORMATION SECTION
-      ===================================================== */}
+      {/* INFORMATION */}
 
       <section className="sijo-info-section">
 
@@ -463,9 +451,7 @@ function SijoJindal() {
       </section>
 
 
-      {/* =====================================================
-          CONTACT CTA
-      ===================================================== */}
+      {/* CONTACT */}
 
       <section className="sijo-contact">
 
@@ -522,9 +508,7 @@ function SijoJindal() {
       </section>
 
 
-      {/* =====================================================
-          FOOTER
-      ===================================================== */}
+      {/* FOOTER */}
 
       <footer className="sijo-footer">
 
