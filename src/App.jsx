@@ -10,14 +10,17 @@ import {
   Bath,
   Sparkles,
   ShieldCheck,
-  Truck,
-  BadgeIndianRupee,
+  Waves,
 } from "lucide-react";
 
 import { useState } from "react";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  /* =====================================================
+     PRODUCT CATEGORIES
+  ===================================================== */
 
   const categories = [
     {
@@ -27,20 +30,15 @@ function App() {
         "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=85",
       icon: <Bath size={21} />,
     },
+
     {
-      title: "Taps & Faucets",
+      title: "Taps",
       description: "Modern fittings for every bathroom",
       image:
         "https://images.unsplash.com/photo-1604709177225-055f99402ea3?auto=format&fit=crop&w=1000&q=85",
       icon: <Droplets size={21} />,
     },
-    {
-      title: "Commodes",
-      description: "Comfortable and quality sanitaryware",
-      image:
-        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85",
-      icon: <Sparkles size={21} />,
-    },
+
     {
       title: "Showers",
       description: "Complete shower and bathing solutions",
@@ -48,21 +46,23 @@ function App() {
         "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85",
       icon: <ShowerHead size={21} />,
     },
+
     {
-      title: "Health Faucets",
-      description: "Reliable bathroom health faucets",
+      title: "Kitchen Sinks",
+      description: "Practical and stylish kitchen sink solutions",
       image:
         "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85",
-      icon: <Droplets size={21} />,
-    },
-    {
-      title: "Bathroom Accessories",
-      description: "Finishing touches for modern bathrooms",
-      image:
-        "https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=1000&q=85",
-      icon: <Sparkles size={21} />,
+      icon: <Waves size={21} />,
     },
   ];
+
+
+  /* =====================================================
+     FEATURED PRODUCTS
+
+     WE WILL REPLACE THESE WITH YOUR REAL PRODUCTS
+     WHEN YOU SEND THE PRODUCT DETAILS + IMAGES.
+  ===================================================== */
 
   const products = [
     {
@@ -71,31 +71,45 @@ function App() {
       image:
         "https://images.unsplash.com/photo-1600566753051-f0b89df2dd90?auto=format&fit=crop&w=1000&q=85",
     },
+
     {
       name: "Modern Tap Collection",
       category: "Taps & Faucets",
       image:
         "https://images.unsplash.com/photo-1604709177225-055f99402ea3?auto=format&fit=crop&w=1000&q=85",
     },
+
     {
-      name: "Premium Sanitaryware",
-      category: "Commodes",
+      name: "Modern Shower Collection",
+      category: "Showers",
+      image:
+        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85",
+    },
+
+    {
+      name: "Kitchen Sink Collection",
+      category: "Kitchen Sinks",
       image:
         "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85",
     },
   ];
 
+
   return (
     <div className="site">
 
-      {/* =========================================
+      {/* =====================================================
           NAVBAR
-      ========================================= */}
+      ===================================================== */}
 
       <header className="navbar">
+
         <div className="nav-container">
 
-          <a href="#home" className="brand">
+          <a
+            href="#home"
+            className="brand"
+          >
 
             <div className="logo-container">
 
@@ -103,13 +117,18 @@ function App() {
                 src="/logo.jpeg"
                 alt="Krishna Enterprises"
                 className="company-logo"
+
                 onError={(event) => {
+
                   event.currentTarget.style.display = "none";
 
                   if (event.currentTarget.nextElementSibling) {
+
                     event.currentTarget.nextElementSibling.style.display =
                       "grid";
+
                   }
+
                 }}
               />
 
@@ -118,6 +137,7 @@ function App() {
               </div>
 
             </div>
+
 
             <div className="brand-text">
 
@@ -194,26 +214,33 @@ function App() {
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Open navigation menu"
           >
+
             {menuOpen ? (
               <X size={25} />
             ) : (
               <Menu size={25} />
             )}
+
           </button>
 
         </div>
+
       </header>
 
 
-      {/* =========================================
+      {/* =====================================================
           HERO
-      ========================================= */}
+      ===================================================== */}
 
       <main>
 
-        <section id="home" className="hero">
+        <section
+          id="home"
+          className="hero"
+        >
 
           <div className="hero-overlay"></div>
+
 
           <div className="hero-content">
 
@@ -230,10 +257,11 @@ function App() {
 
 
             <p className="hero-description">
-              From elegant basins and modern faucets to sanitaryware,
-              showers and bathroom essentials — Krishna Enterprises
-              brings quality products and dependable wholesale supply
-              together under one roof.
+              From elegant basins and modern faucets to
+              sanitaryware, showers, kitchen sinks and
+              bathroom essentials — Krishna Enterprises
+              brings quality products and dependable
+              wholesale supply together under one roof.
             </p>
 
 
@@ -244,18 +272,23 @@ function App() {
                 className="btn-primary"
               >
                 Explore Collection
+
                 <ArrowRight size={18} />
+
               </a>
 
 
               <a
-                href="https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20I%20would%20like%20to%20enquire%20about%20your%20bathroom%20products."
+                href="https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline"
               >
+
                 <MessageCircle size={17} />
+
                 WhatsApp Enquiry
+
               </a>
 
             </div>
@@ -266,13 +299,20 @@ function App() {
           <div className="hero-bottom">
 
             <div className="hero-location">
+
               <MapPin size={16} />
+
               Sakinaka, Mumbai
+
             </div>
 
+
             <div className="hero-scroll">
+
               SCROLL TO EXPLORE
+
               <span></span>
+
             </div>
 
           </div>
@@ -280,9 +320,11 @@ function App() {
         </section>
 
 
-        {/* =========================================
+        {/* =====================================================
             TRUST BAR
-        ========================================= */}
+
+            ONLY TWO ITEMS NOW
+        ===================================================== */}
 
         <section className="trust-bar">
 
@@ -291,32 +333,15 @@ function App() {
             <ShieldCheck size={23} />
 
             <div>
-              <strong>Quality Products</strong>
-              <span>Selected for reliability</span>
-            </div>
 
-          </div>
+              <strong>
+                Quality Products
+              </strong>
 
+              <span>
+                Selected for reliability
+              </span>
 
-          <div className="trust-item">
-
-            <BadgeIndianRupee size={23} />
-
-            <div>
-              <strong>Wholesale Rates</strong>
-              <span>Competitive business pricing</span>
-            </div>
-
-          </div>
-
-
-          <div className="trust-item">
-
-            <Truck size={23} />
-
-            <div>
-              <strong>Bulk Supply</strong>
-              <span>For shops & businesses</span>
             </div>
 
           </div>
@@ -327,8 +352,15 @@ function App() {
             <Sparkles size={23} />
 
             <div>
-              <strong>Modern Designs</strong>
-              <span>Contemporary bathroom solutions</span>
+
+              <strong>
+                Modern Designs
+              </strong>
+
+              <span>
+                Contemporary bathroom solutions
+              </span>
+
             </div>
 
           </div>
@@ -336,9 +368,9 @@ function App() {
         </section>
 
 
-        {/* =========================================
+        {/* =====================================================
             CATEGORIES
-        ========================================= */}
+        ===================================================== */}
 
         <section
           id="categories"
@@ -356,16 +388,16 @@ function App() {
               <h2>
                 Everything Your
                 <br />
-                <span>Bathroom Needs.</span>
+                <span>Space Needs.</span>
               </h2>
 
             </div>
 
 
             <p>
-              Explore our range of sanitaryware and bathroom
-              fittings designed for homes, projects, retailers
-              and businesses.
+              Explore our range of bathroom and kitchen
+              products designed for homes, projects,
+              retailers and businesses.
             </p>
 
           </div>
@@ -373,66 +405,68 @@ function App() {
 
           <div className="category-grid">
 
-            {categories.map((category, index) => (
+            {categories.map(
+              (category, index) => (
 
-              <article
-                className="category-card"
-                key={index}
-              >
+                <article
+                  className="category-card"
+                  key={index}
+                >
 
-                <div className="category-image">
+                  <div className="category-image">
 
-                  <img
-                    src={category.image}
-                    alt={category.title}
-                  />
+                    <img
+                      src={category.image}
+                      alt={category.title}
+                    />
 
-                  <div className="category-number">
-                    0{index + 1}
-                  </div>
-
-                </div>
-
-
-                <div className="category-content">
-
-                  <div className="category-icon">
-                    {category.icon}
-                  </div>
-
-
-                  <div>
-
-                    <h3>
-                      {category.title}
-                    </h3>
-
-                    <p>
-                      {category.description}
-                    </p>
+                    <div className="category-number">
+                      0{index + 1}
+                    </div>
 
                   </div>
 
 
-                  <ArrowRight
-                    className="category-arrow"
-                    size={18}
-                  />
+                  <div className="category-content">
 
-                </div>
+                    <div className="category-icon">
+                      {category.icon}
+                    </div>
 
-              </article>
 
-            ))}
+                    <div>
+
+                      <h3>
+                        {category.title}
+                      </h3>
+
+                      <p>
+                        {category.description}
+                      </p>
+
+                    </div>
+
+
+                    <ArrowRight
+                      className="category-arrow"
+                      size={18}
+                    />
+
+                  </div>
+
+                </article>
+
+              )
+            )}
 
           </div>
 
         </section>
 
 
-        {/* =========================================
+        {/* =====================================================
             FEATURED PRODUCTS
-        ========================================= */}
+        ===================================================== */}
 
         <section
           id="products"
@@ -457,9 +491,9 @@ function App() {
 
 
             <p>
-              Explore a selection from our bathroom product
-              range. Our complete catalogue will be available
-              with product details, specifications and pricing.
+              Explore a selection from our product range.
+              Our complete catalogue will include product
+              photos, specifications and pricing.
             </p>
 
           </div>
@@ -467,60 +501,67 @@ function App() {
 
           <div className="product-grid">
 
-            {products.map((product, index) => (
+            {products.map(
+              (product, index) => (
 
-              <article
-                className="product-card"
-                key={index}
-              >
+                <article
+                  className="product-card"
+                  key={index}
+                >
 
-                <div className="product-image">
+                  <div className="product-image">
 
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                  />
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                    />
 
-                  <div className="product-badge">
-                    WHOLESALE
-                  </div>
-
-                </div>
-
-
-                <div className="product-details">
-
-                  <div className="product-category">
-                    {product.category}
-                  </div>
-
-                  <h3>
-                    {product.name}
-                  </h3>
-
-
-                  <div className="product-bottom">
-
-                    <span>
-                      Contact for pricing
-                    </span>
-
-                    <a
-                      href="https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20I%20am%20interested%20in%20your%20bathroom%20products."
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Enquire
-                      <ArrowRight size={15} />
-                    </a>
+                    <div className="product-badge">
+                      WHOLESALE
+                    </div>
 
                   </div>
 
-                </div>
 
-              </article>
+                  <div className="product-details">
 
-            ))}
+                    <div className="product-category">
+                      {product.category}
+                    </div>
+
+
+                    <h3>
+                      {product.name}
+                    </h3>
+
+
+                    <div className="product-bottom">
+
+                      <span>
+                        Contact for pricing
+                      </span>
+
+
+                      <a
+                        href="https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20I%20am%20interested%20in%20your%20products."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+
+                        Enquire
+
+                        <ArrowRight size={15} />
+
+                      </a>
+
+                    </div>
+
+                  </div>
+
+                </article>
+
+              )
+            )}
 
           </div>
 
@@ -528,13 +569,16 @@ function App() {
           <div className="catalogue-button">
 
             <a
-              href="https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20please%20share%20your%20complete%20bathroom%20product%20catalogue."
+              href="https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20please%20share%20your%20complete%20product%20catalogue."
               target="_blank"
               rel="noopener noreferrer"
               className="dark-button"
             >
+
               Request Complete Catalogue
+
               <ArrowRight size={17} />
+
             </a>
 
           </div>
@@ -542,9 +586,9 @@ function App() {
         </section>
 
 
-        {/* =========================================
+        {/* =====================================================
             ABOUT
-        ========================================= */}
+        ===================================================== */}
 
         <section
           id="about"
@@ -588,21 +632,22 @@ function App() {
             <h2>
               Your Trusted
               <br />
-              <span>Bathroom Partner.</span>
+              <span>Product Partner.</span>
             </h2>
 
 
             <p>
-              Krishna Enterprises is a wholesale supplier of
-              bathroom and sanitaryware products based in
-              Sakinaka, Mumbai.
+              Krishna Enterprises is a wholesale supplier
+              of bathroom and sanitaryware products based
+              in Sakinaka, Mumbai.
             </p>
 
 
             <p>
               From everyday bathroom essentials to modern
-              fittings and sanitaryware, we aim to provide
-              quality products at competitive wholesale rates.
+              fittings, sanitaryware and kitchen solutions,
+              we aim to provide quality products at
+              competitive wholesale rates.
             </p>
 
 
@@ -616,18 +661,41 @@ function App() {
             <div className="about-points">
 
               <div>
-                <span>01</span>
-                <strong>Quality Focused</strong>
+
+                <span>
+                  01
+                </span>
+
+                <strong>
+                  Quality Focused
+                </strong>
+
               </div>
 
-              <div>
-                <span>02</span>
-                <strong>Wholesale Pricing</strong>
-              </div>
 
               <div>
-                <span>03</span>
-                <strong>Reliable Service</strong>
+
+                <span>
+                  02
+                </span>
+
+                <strong>
+                  Competitive Pricing
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  03
+                </span>
+
+                <strong>
+                  Reliable Service
+                </strong>
+
               </div>
 
             </div>
@@ -637,9 +705,9 @@ function App() {
         </section>
 
 
-        {/* =========================================
+        {/* =====================================================
             CONTACT
-        ========================================= */}
+        ===================================================== */}
 
         <section
           id="contact"
@@ -661,9 +729,10 @@ function App() {
 
 
             <p>
-              Looking for bathroom products in bulk?
-              Contact Krishna Enterprises for product
-              availability, wholesale rates and enquiries.
+              Looking for bathroom or kitchen products
+              in bulk? Contact Krishna Enterprises for
+              product availability, wholesale rates
+              and enquiries.
             </p>
 
           </div>
@@ -738,7 +807,7 @@ function App() {
 
 
             <a
-              href="https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20I%20would%20like%20to%20enquire%20about%20your%20bathroom%20products."
+              href="https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
               target="_blank"
               rel="noopener noreferrer"
               className="contact-box whatsapp-box"
@@ -788,9 +857,9 @@ function App() {
       </main>
 
 
-      {/* =========================================
+      {/* =====================================================
           FOOTER
-      ========================================= */}
+      ===================================================== */}
 
       <footer className="footer">
 
@@ -844,7 +913,11 @@ function App() {
 
 
           <div className="footer-copy">
-            © {new Date().getFullYear()} Krishna Enterprises
+
+            © {new Date().getFullYear()}
+            {" "}
+            Krishna Enterprises
+
           </div>
 
         </div>
@@ -852,9 +925,9 @@ function App() {
       </footer>
 
 
-      {/* =========================================
+      {/* =====================================================
           FLOATING WHATSAPP
-      ========================================= */}
+      ===================================================== */}
 
       <a
         href="https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
@@ -863,7 +936,9 @@ function App() {
         className="floating-whatsapp"
         aria-label="WhatsApp Krishna Enterprises"
       >
+
         <MessageCircle size={23} />
+
       </a>
 
     </div>
