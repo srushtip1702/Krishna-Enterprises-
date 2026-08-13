@@ -8,12 +8,14 @@ import {
   Droplets,
   ShowerHead,
   Bath,
-  Sparkles,
   ShieldCheck,
+  Sparkles,
   Waves,
 } from "lucide-react";
 
 import { useState } from "react";
+import SijoJindal from "./SijoJindal";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -50,8 +52,10 @@ function App() {
     {
       title: "Kitchen Sinks",
       description: "Practical and stylish kitchen sink solutions",
-      image:
-        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85",
+
+      /* YOUR KITCHEN SINK IMAGE */
+      image: "/products/kitchen-sink.jpg",
+
       icon: <Waves size={21} />,
     },
   ];
@@ -61,7 +65,7 @@ function App() {
      FEATURED PRODUCTS
 
      WE WILL REPLACE THESE WITH YOUR REAL PRODUCTS
-     WHEN YOU SEND THE PRODUCT DETAILS + IMAGES.
+     LATER.
   ===================================================== */
 
   const products = [
@@ -89,8 +93,9 @@ function App() {
     {
       name: "Kitchen Sink Collection",
       category: "Kitchen Sinks",
-      image:
-        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=85",
+
+      /* SAME LOCAL IMAGE */
+      image: "/products/kitchen-sink.jpg",
     },
   ];
 
@@ -245,7 +250,7 @@ function App() {
           <div className="hero-content">
 
             <div className="hero-tag">
-              PREMIUM SANITARYWARE · BATHROOM FITTINGS · WHOLESALE
+              · BATHROOM FITTINGS · WHOLESALE
             </div>
 
 
@@ -272,9 +277,7 @@ function App() {
                 className="btn-primary"
               >
                 Explore Collection
-
                 <ArrowRight size={18} />
-
               </a>
 
 
@@ -284,11 +287,8 @@ function App() {
                 rel="noopener noreferrer"
                 className="btn-outline"
               >
-
                 <MessageCircle size={17} />
-
                 WhatsApp Enquiry
-
               </a>
 
             </div>
@@ -299,20 +299,14 @@ function App() {
           <div className="hero-bottom">
 
             <div className="hero-location">
-
               <MapPin size={16} />
-
               Sakinaka, Mumbai
-
             </div>
 
 
             <div className="hero-scroll">
-
               SCROLL TO EXPLORE
-
               <span></span>
-
             </div>
 
           </div>
@@ -322,8 +316,6 @@ function App() {
 
         {/* =====================================================
             TRUST BAR
-
-            ONLY TWO ITEMS NOW
         ===================================================== */}
 
         <section className="trust-bar">
@@ -409,15 +401,33 @@ function App() {
               (category, index) => (
 
                 <article
-                  className="category-card"
-                  key={index}
-                >
+  className="category-card"
+  key={index}
+  onClick={() => {
+    if (category.title === "Kitchen Sinks") {
+      window.location.href = "/kitchen-sinks/sijo-jindal";
+    }
+  }}
+  style={{
+    cursor:
+      category.title === "Kitchen Sinks"
+        ? "pointer"
+        : "default",
+  }}
+>
 
                   <div className="category-image">
 
                     <img
                       src={category.image}
                       alt={category.title}
+
+                      onError={(event) => {
+                        console.log(
+                          "Image not found:",
+                          category.image
+                        );
+                      }}
                     />
 
                     <div className="category-number">
@@ -559,7 +569,6 @@ function App() {
                   </div>
 
                 </article>
-
               )
             )}
 
@@ -661,41 +670,18 @@ function App() {
             <div className="about-points">
 
               <div>
-
-                <span>
-                  01
-                </span>
-
-                <strong>
-                  Quality Focused
-                </strong>
-
+                <span>01</span>
+                <strong>Quality Focused</strong>
               </div>
 
-
               <div>
-
-                <span>
-                  02
-                </span>
-
-                <strong>
-                  Competitive Pricing
-                </strong>
-
+                <span>02</span>
+                <strong>Competitive Pricing</strong>
               </div>
 
-
               <div>
-
-                <span>
-                  03
-                </span>
-
-                <strong>
-                  Reliable Service
-                </strong>
-
+                <span>03</span>
+                <strong>Reliable Service</strong>
               </div>
 
             </div>
@@ -913,11 +899,7 @@ function App() {
 
 
           <div className="footer-copy">
-
-            © {new Date().getFullYear()}
-            {" "}
-            Krishna Enterprises
-
+            © {new Date().getFullYear()} Krishna Enterprises
           </div>
 
         </div>
