@@ -290,12 +290,13 @@
 
 
 /* =====================================================
-   PRODUCT IMAGE
+   PRODUCT IMAGE AREA
 ===================================================== */
 
 .sijo-product-image {
 
-  /* Increased slightly so the full image has room */
+  width: 100%;
+
   height: 350px;
 
   position: relative;
@@ -309,7 +310,24 @@
   align-items: center;
 
   justify-content: center;
+
+  /*
+     Thin equal space around every image.
+  */
+
+  padding: 10px;
+
+  box-sizing: border-box;
 }
+
+
+/*
+   NORMAL PRODUCT IMAGES
+
+   Same available area
+   + same margin
+   + complete image visible.
+*/
 
 .sijo-product-image img {
 
@@ -319,31 +337,79 @@
 
   display: block;
 
-  /*
-     SHOW THE COMPLETE PRODUCT PHOTO
-     INSTEAD OF CROPPING IT
-  */
-
   object-fit: contain;
+
+  object-position: center;
 
   transition:
     transform 0.5s;
 }
 
-.sijo-product-card:hover
-.sijo-product-image img {
-  transform: scale(1.02);
+
+/* =====================================================
+   21 × 18 IMAGE
+===================================================== */
+
+/*
+   Rotate the 21 × 18 image LEFT.
+
+   The smaller scale gives the rotated image
+   enough breathing room on all four sides.
+*/
+
+.sijo-product-image img.sijo-rotate-left {
+
+  width: calc(100% - 8px);
+
+  height: calc(100% - 8px);
+
+  object-fit: contain;
+
+  object-position: center;
+
+  transform:
+    rotate(-90deg)
+    scale(0.88);
+
 }
 
+
+/*
+   Keep the 21 × 18 image rotated
+   when hovering.
+
+   Otherwise the normal hover transform
+   would overwrite rotate(-90deg).
+*/
+
+.sijo-product-card:hover
+.sijo-product-image img.sijo-rotate-left {
+
+  transform:
+    rotate(-90deg)
+    scale(0.91);
+
+}
+
+
+/* =====================================================
+   PRODUCT NUMBER
+===================================================== */
+
 .sijo-product-number {
+
   position: absolute;
+
   top: 15px;
+
   left: 15px;
 
   width: 34px;
+
   height: 34px;
 
   display: grid;
+
   place-items: center;
 
   background:
@@ -352,12 +418,21 @@
   color: #d3af6b;
 
   font-size: 9px;
+
   font-weight: 700;
 }
 
+
+/* =====================================================
+   BRAND BADGE
+===================================================== */
+
 .sijo-brand-badge {
+
   position: absolute;
+
   right: 15px;
+
   bottom: 15px;
 
   padding: 7px 10px;
@@ -368,7 +443,9 @@
   color: #222;
 
   font-size: 8px;
+
   font-weight: 800;
+
   letter-spacing: 1.5px;
 }
 
@@ -378,20 +455,28 @@
 ===================================================== */
 
 .sijo-product-info {
+
   padding: 25px;
 }
 
 .sijo-product-category {
+
   color: #a4824d;
+
   font-size: 8px;
+
   font-weight: 800;
+
   letter-spacing: 2px;
 }
 
 .sijo-product-info h3 {
+
   margin: 9px 0 22px;
 
-  font-family: Georgia, serif;
+  font-family:
+    Georgia,
+    serif;
 
   font-size: 25px;
 
@@ -406,6 +491,7 @@
 ===================================================== */
 
 .sijo-details {
+
   display: grid;
 
   grid-template-columns:
@@ -420,6 +506,7 @@
 }
 
 .sijo-detail {
+
   display: flex;
 
   align-items: center;
@@ -430,12 +517,14 @@
 }
 
 .sijo-detail div {
+
   display: flex;
 
   flex-direction: column;
 }
 
 .sijo-detail span {
+
   color: #999;
 
   font-size: 7px;
@@ -446,6 +535,7 @@
 }
 
 .sijo-detail strong {
+
   margin-top: 3px;
 
   color: #333;
@@ -459,6 +549,7 @@
 ===================================================== */
 
 .sijo-price-row {
+
   padding-top: 20px;
 
   display: flex;
@@ -471,12 +562,14 @@
 }
 
 .sijo-price-row div {
+
   display: flex;
 
   flex-direction: column;
 }
 
 .sijo-price-row span {
+
   color: #999;
 
   font-size: 7px;
@@ -487,11 +580,14 @@
 }
 
 .sijo-price-row strong {
+
   margin-top: 4px;
 
   color: #1c1c1c;
 
-  font-family: Georgia, serif;
+  font-family:
+    Georgia,
+    serif;
 
   font-size: 22px;
 
@@ -499,6 +595,7 @@
 }
 
 .sijo-enquire {
+
   display: inline-flex;
 
   align-items: center;
@@ -521,15 +618,17 @@
 }
 
 .sijo-enquire:hover {
+
   background: #a4824d;
 }
 
 
 /* =====================================================
-   INFO
+   INFORMATION SECTION
 ===================================================== */
 
 .sijo-info-section {
+
   width: min(1200px, 88%);
 
   margin: 0 auto 80px;
@@ -543,6 +642,7 @@
 }
 
 .sijo-info-card {
+
   padding: 28px;
 
   display: flex;
@@ -557,11 +657,14 @@
 }
 
 .sijo-info-card strong {
+
   display: block;
 
   color: #222;
 
-  font-family: Georgia, serif;
+  font-family:
+    Georgia,
+    serif;
 
   font-size: 18px;
 
@@ -569,6 +672,7 @@
 }
 
 .sijo-info-card p {
+
   margin-top: 7px;
 
   color: #777;
@@ -584,6 +688,7 @@
 ===================================================== */
 
 .sijo-contact {
+
   padding: 80px 8%;
 
   display: flex;
@@ -600,9 +705,12 @@
 }
 
 .sijo-contact h2 {
+
   margin-top: 13px;
 
-  font-family: Georgia, serif;
+  font-family:
+    Georgia,
+    serif;
 
   font-size: 50px;
 
@@ -612,10 +720,12 @@
 }
 
 .sijo-contact h2 span {
+
   color: #d0aa63;
 }
 
 .sijo-contact p {
+
   max-width: 500px;
 
   margin-top: 18px;
@@ -628,6 +738,7 @@
 }
 
 .sijo-contact-buttons {
+
   display: flex;
 
   gap: 12px;
@@ -637,6 +748,7 @@
 
 .sijo-contact-call,
 .sijo-contact-whatsapp {
+
   display: inline-flex;
 
   align-items: center;
@@ -653,12 +765,14 @@
 }
 
 .sijo-contact-call {
+
   background: #d0aa63;
 
   color: #171717;
 }
 
 .sijo-contact-whatsapp {
+
   border: 1px solid #555;
 
   color: white;
@@ -670,6 +784,7 @@
 ===================================================== */
 
 .sijo-footer {
+
   padding: 30px 8%;
 
   display: flex;
@@ -688,6 +803,7 @@
 }
 
 .sijo-footer strong {
+
   display: block;
 
   color: #ddd;
@@ -698,6 +814,7 @@
 }
 
 .sijo-footer span {
+
   display: block;
 
   margin-top: 5px;
@@ -705,115 +822,158 @@
 
 
 /* =====================================================
-   MOBILE
+   TABLET
 ===================================================== */
 
 @media (max-width: 900px) {
 
   .sijo-header {
-    grid-template-columns: 1fr auto;
+
+    grid-template-columns:
+      1fr auto;
   }
 
   .sijo-brand {
-    grid-column: 1 / -1;
+
+    grid-column:
+      1 / -1;
+
     grid-row: 1;
+
     justify-self: center;
   }
 
   .sijo-back {
+
     grid-row: 2;
   }
 
   .sijo-call {
+
     grid-row: 2;
   }
 
   .sijo-product-grid {
+
     grid-template-columns:
       repeat(2, 1fr);
   }
 
   .sijo-section-heading {
+
     align-items: flex-start;
+
     flex-direction: column;
   }
 
   .sijo-contact {
+
     flex-direction: column;
+
     align-items: flex-start;
   }
 
 }
 
 
+/* =====================================================
+   MOBILE
+===================================================== */
+
 @media (max-width: 600px) {
 
   .sijo-topbar-inner {
+
     flex-direction: column;
+
     gap: 5px;
+
     text-align: center;
   }
 
   .sijo-header {
-    padding: 15px 20px;
+
+    padding:
+      15px 20px;
   }
 
   .sijo-brand strong {
+
     font-size: 18px;
   }
 
   .sijo-hero {
+
     min-height: 500px;
   }
 
   .sijo-hero-content {
+
     width: 90%;
   }
 
   .sijo-hero h1 {
+
     font-size: 42px;
   }
 
   .sijo-hero-stats {
+
     gap: 22px;
   }
 
   .sijo-hero-stats strong {
+
     font-size: 20px;
   }
 
   .sijo-product-grid {
+
     grid-template-columns: 1fr;
   }
 
   .sijo-product-image {
+
+    width: 100%;
+
     height: 350px;
+
+    padding: 10px;
   }
 
   .sijo-info-section {
+
     grid-template-columns: 1fr;
   }
 
   .sijo-contact {
-    padding: 65px 7%;
+
+    padding:
+      65px 7%;
   }
 
   .sijo-contact h2 {
+
     font-size: 42px;
   }
 
   .sijo-contact-buttons {
+
     width: 100%;
+
     flex-direction: column;
   }
 
   .sijo-contact-call,
   .sijo-contact-whatsapp {
+
     justify-content: center;
   }
 
   .sijo-footer {
+
     flex-direction: column;
+
     align-items: flex-start;
   }
 

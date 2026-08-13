@@ -68,7 +68,9 @@ function SijoJindal() {
 
     <div className="sijo-page">
 
-      {/* TOP BAR */}
+      {/* =====================================================
+          TOP BAR
+      ===================================================== */}
 
       <div className="sijo-topbar">
 
@@ -87,7 +89,9 @@ function SijoJindal() {
       </div>
 
 
-      {/* HEADER */}
+      {/* =====================================================
+          HEADER
+      ===================================================== */}
 
       <header className="sijo-header">
 
@@ -135,7 +139,9 @@ function SijoJindal() {
       </header>
 
 
-      {/* HERO */}
+      {/* =====================================================
+          HERO
+      ===================================================== */}
 
       <section className="sijo-hero">
 
@@ -207,7 +213,9 @@ function SijoJindal() {
       </section>
 
 
-      {/* BREADCRUMB */}
+      {/* =====================================================
+          BREADCRUMB
+      ===================================================== */}
 
       <div className="sijo-breadcrumb">
 
@@ -230,7 +238,9 @@ function SijoJindal() {
       </div>
 
 
-      {/* PRODUCTS */}
+      {/* =====================================================
+          PRODUCTS
+      ===================================================== */}
 
       <main className="sijo-products-section">
 
@@ -270,12 +280,21 @@ function SijoJindal() {
                 key={product.size}
               >
 
-                {/* IMAGE */}
+                {/* =================================================
+                    PRODUCT IMAGE
+                ================================================= */}
 
                 <div className="sijo-product-image">
 
                   <img
+                    className={
+                      product.size === "21x18"
+                        ? "sijo-rotate-left"
+                        : ""
+                    }
+
                     src={product.image}
+
                     alt={`Sijo Jindal ${product.displaySize} Kitchen Sink`}
 
                     onError={(event) => {
@@ -293,28 +312,38 @@ function SijoJindal() {
 
 
                   <div className="sijo-product-number">
+
                     {String(index + 1).padStart(2, "0")}
+
                   </div>
 
 
                   <div className="sijo-brand-badge">
+
                     SIJO JINDAL
+
                   </div>
 
                 </div>
 
 
-                {/* DETAILS */}
+                {/* =================================================
+                    PRODUCT INFORMATION
+                ================================================= */}
 
                 <div className="sijo-product-info">
 
                   <div className="sijo-product-category">
+
                     KITCHEN SINK
+
                   </div>
 
 
                   <h3>
+
                     Sijo Jindal
+
                   </h3>
 
 
@@ -377,8 +406,11 @@ function SijoJindal() {
 
                     <a
                       href={`https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20I%20am%20interested%20in%20the%20Sijo%20Jindal%20${encodeURIComponent(product.displaySize)}%20kitchen%20sink.`}
+
                       target="_blank"
+
                       rel="noopener noreferrer"
+
                       className="sijo-enquire"
                     >
 
@@ -402,7 +434,9 @@ function SijoJindal() {
       </main>
 
 
-      {/* INFORMATION */}
+      {/* =====================================================
+          INFORMATION
+      ===================================================== */}
 
       <section className="sijo-info-section">
 
@@ -451,7 +485,9 @@ function SijoJindal() {
       </section>
 
 
-      {/* CONTACT */}
+      {/* =====================================================
+          CONTACT
+      ===================================================== */}
 
       <section className="sijo-contact">
 
@@ -492,8 +528,11 @@ function SijoJindal() {
 
           <a
             href="https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20I%20would%20like%20to%20know%20about%20your%20Sijo%20Jindal%20kitchen%20sink%20collection."
+
             target="_blank"
+
             rel="noopener noreferrer"
+
             className="sijo-contact-whatsapp"
           >
 
@@ -508,7 +547,9 @@ function SijoJindal() {
       </section>
 
 
-      {/* FOOTER */}
+      {/* =====================================================
+          FOOTER
+      ===================================================== */}
 
       <footer className="sijo-footer">
 
@@ -526,7 +567,9 @@ function SijoJindal() {
 
 
         <div>
+
           © {new Date().getFullYear()} Krishna Enterprises
+
         </div>
 
       </footer>
@@ -534,6 +577,7 @@ function SijoJindal() {
     </div>
 
   );
+
 }
 
 
