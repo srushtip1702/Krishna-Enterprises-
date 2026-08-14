@@ -14,7 +14,7 @@ function RouterApp() {
     <BrowserRouter>
       <Routes>
 
-        {/* HOME PAGE */}
+        {/* HOME PAGE - ROUTING */}
         <Route
           path="/"
           element={<App />}
