@@ -51,37 +51,6 @@ function App() {
     },
   ];
 
-  /* =====================================================
-     FEATURED PRODUCTS
-  ===================================================== */
-  const products = [
-    {
-      name: "Premium Basin Collection",
-      category: "Wash Basins",
-      image:
-        "https://images.unsplash.com/photo-1600566753051-f0b89df2dd90?auto=format&fit=crop&w=1000&q=85",
-    },
-    {
-      name: "Modern Tap Collection",
-      category: "Taps & Faucets",
-      image:
-        "https://images.unsplash.com/photo-1604709177225-055f99402ea3?auto=format&fit=crop&w=1000&q=85",
-    },
-    {
-      name: "Modern Shower Collection",
-      category: "Showers",
-      image:
-        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85",
-    },
-    {
-      name: "Kitchen Sink Collection",
-      category: "Kitchen Sinks",
-      image: "/products/kitchen-sink.jpg",
-    },
-  ];
-
-  return (
-    <div className="site">
       {/* =====================================================
           NAVBAR
       ===================================================== */}
