@@ -5,7 +5,9 @@ import {
 } from "react-router-dom";
 
 import App from "./App";
+import KitchenSinks from "./KitchenSinks";
 import SijoJindal from "./SijoJindal";
+import Sijo from "./Sijo";
 
 
 function RouterApp() {
@@ -16,14 +18,35 @@ function RouterApp() {
 
       <Routes>
 
+        {/* HOME */}
+
         <Route
           path="/"
           element={<App />}
         />
 
+
+        {/* KITCHEN SINK COLLECTIONS */}
+
         <Route
-          path="/kitchen-sinks/sijo-jindal"
+          path="/kitchen-sinks"
+          element={<KitchenSinks />}
+        />
+
+
+        {/* SIJO JINDAL - SJ */}
+
+        <Route
+          path="/kitchen-sinks/sj"
           element={<SijoJindal />}
+        />
+
+
+        {/* SIJO - S */}
+
+        <Route
+          path="/kitchen-sinks/s"
+          element={<Sijo />}
         />
 
       </Routes>

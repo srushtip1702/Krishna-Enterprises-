@@ -7,53 +7,68 @@ import {
   Tag,
 } from "lucide-react";
 
+import { useNavigate } from "react-router-dom";
+
 import "./sijo.css";
 
 
+/* =====================================================
+   SIJO PRODUCTS
+===================================================== */
+
 const sijoProducts = [
+
   {
     size: "18x16",
     displaySize: "18 × 16",
     price: 2252,
-    image: "/products/kitchen-sinks/sijo/S 18x16.png",
+    image: "/products/kitchen-sinks/S/S 18x16.png",
   },
 
   {
     size: "20x17",
     displaySize: "20 × 17",
     price: 2460,
-    image: "/products/kitchen-sinks/sijo/S 20x17.png",
+    image: "/products/kitchen-sinks/S/S 20x17.png",
   },
 
   {
     size: "21x18",
     displaySize: "21 × 18",
     price: 2580,
-    image: "/products/kitchen-sinks/sijo/S 21x18.png",
+    image: "/products/kitchen-sinks/S/S 21x18.png",
   },
 
   {
     size: "22x18",
     displaySize: "22 × 18",
     price: 2856,
-    image: "/products/kitchen-sinks/sijo/S 22x18.png",
+    image: "/products/kitchen-sinks/S/S 22x18.png",
   },
 
   {
     size: "24x18",
     displaySize: "24 × 18",
     price: 2964,
-    image: "/products/kitchen-sinks/sijo/S 24x18.png",
+    image: "/products/kitchen-sinks/S/S 24x18.png",
   },
+
 ];
 
 
 function Sijo() {
 
+  const navigate = useNavigate();
+
+
   return (
+
     <div className="sijo-page">
 
-      {/* TOP BAR */}
+
+      {/* =====================================================
+          TOP BAR
+      ===================================================== */}
 
       <div className="sijo-topbar">
 
@@ -72,17 +87,22 @@ function Sijo() {
       </div>
 
 
-      {/* HEADER */}
+      {/* =====================================================
+          HEADER
+      ===================================================== */}
 
       <header className="sijo-header">
+
 
         <a
           href="/"
           className="sijo-back"
         >
+
           <ArrowLeft size={17} />
 
           Back to Website
+
         </a>
 
 
@@ -112,17 +132,23 @@ function Sijo() {
           href="tel:9892778195"
           className="sijo-call"
         >
+
           Call Us
+
         </a>
+
 
       </header>
 
 
-      {/* HERO */}
+      {/* =====================================================
+          HERO
+      ===================================================== */}
 
       <section className="sijo-hero">
 
         <div className="sijo-hero-content">
+
 
           <div className="sijo-label">
             KITCHEN SINKS · SIJO
@@ -130,23 +156,30 @@ function Sijo() {
 
 
           <h1>
+
             Sijo
+
             <br />
+
             <span>
-              Diamond Collection.
+              Sijo Collection.
             </span>
+
           </h1>
 
 
           <p>
-            Explore the Sijo Diamond kitchen sink
+
+            Explore the Sijo kitchen sink
             collection, featuring practical sizes,
             dependable construction and a 1 mm grade
             specification.
+
           </p>
 
 
           <div className="sijo-hero-stats">
+
 
             <div>
 
@@ -186,6 +219,7 @@ function Sijo() {
 
             </div>
 
+
           </div>
 
         </div>
@@ -193,78 +227,114 @@ function Sijo() {
       </section>
 
 
-      {/* BREADCRUMB */}
+      {/* =====================================================
+          BREADCRUMB
+      ===================================================== */}
 
       <div className="sijo-breadcrumb">
+
 
         <a href="/">
           Home
         </a>
 
+
         <ArrowRight size={14} />
 
-        <span>
+
+        <button
+          type="button"
+          className="breadcrumb-link"
+          onClick={() =>
+            navigate("/kitchen-sinks")
+          }
+        >
           Kitchen Sinks
-        </span>
+        </button>
+
 
         <ArrowRight size={14} />
+
 
         <strong>
           Sijo
         </strong>
 
+
       </div>
 
 
-      {/* PRODUCTS */}
+      {/* =====================================================
+          PRODUCTS
+      ===================================================== */}
 
       <main className="sijo-products-section">
 
+
         <div className="sijo-section-heading">
+
 
           <div>
 
             <div className="sijo-label">
-              SIJO DIAMOND · 1 MM
+              SIJO · 1 MM
             </div>
 
+
             <h2>
+
               Available
+
               <br />
+
               <span>
                 Sizes.
               </span>
+
             </h2>
 
           </div>
 
 
           <p>
-            Browse the currently available Sijo Diamond
+
+            Browse the currently available Sijo
             kitchen sinks. All listed products have a
             1 mm grade specification.
+
           </p>
+
 
         </div>
 
 
         <div className="sijo-product-grid">
 
+
           {sijoProducts.map(
             (product, index) => (
+
 
               <article
                 className="sijo-product-card"
                 key={product.size}
               >
 
-                {/* PRODUCT IMAGE */}
+
+                {/* =================================================
+                    PRODUCT IMAGE
+                ================================================= */}
 
                 <div className="sijo-product-image">
 
+
                   <img
+
                     src={product.image}
-                    alt={`Sijo ${product.displaySize} Kitchen Sink`}
+
+                    alt={
+                      `Sijo ${product.displaySize} Kitchen Sink`
+                    }
 
                     onError={(event) => {
 
@@ -277,27 +347,38 @@ function Sijo() {
                         "0.25";
 
                     }}
+
                   />
 
 
                   <div className="sijo-product-number">
+
                     {String(index + 1).padStart(2, "0")}
+
                   </div>
 
 
                   <div className="sijo-brand-badge">
+
                     SIJO
+
                   </div>
+
 
                 </div>
 
 
-                {/* PRODUCT INFORMATION */}
+                {/* =================================================
+                    PRODUCT INFORMATION
+                ================================================= */}
 
                 <div className="sijo-product-info">
 
+
                   <div className="sijo-product-category">
+
                     KITCHEN SINK
+
                   </div>
 
 
@@ -308,15 +389,20 @@ function Sijo() {
 
                   <div className="sijo-details">
 
+
+                    {/* SIZE */}
+
                     <div className="sijo-detail">
 
                       <Ruler size={16} />
+
 
                       <div>
 
                         <span>
                           SIZE
                         </span>
+
 
                         <strong>
                           {product.displaySize}
@@ -327,15 +413,19 @@ function Sijo() {
                     </div>
 
 
+                    {/* GRADE */}
+
                     <div className="sijo-detail">
 
                       <ShieldCheck size={16} />
+
 
                       <div>
 
                         <span>
                           GRADE
                         </span>
+
 
                         <strong>
                           1 mm
@@ -345,16 +435,21 @@ function Sijo() {
 
                     </div>
 
+
                   </div>
 
 
+                  {/* PRICE */}
+
                   <div className="sijo-price-row">
+
 
                     <div>
 
                       <span>
                         PRICE
                       </span>
+
 
                       <strong>
                         ₹{product.price.toLocaleString("en-IN")}
@@ -364,7 +459,10 @@ function Sijo() {
 
 
                     <a
-                      href={`https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20I%20am%20interested%20in%20the%20Sijo%20${encodeURIComponent(product.displaySize)}%20kitchen%20sink.`}
+
+                      href={
+                        `https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20I%20am%20interested%20in%20the%20Sijo%20${encodeURIComponent(product.displaySize)}%20kitchen%20sink.`
+                      }
 
                       target="_blank"
 
@@ -379,27 +477,35 @@ function Sijo() {
 
                     </a>
 
+
                   </div>
 
+
                 </div>
+
 
               </article>
 
             )
           )}
 
+
         </div>
 
       </main>
 
 
-      {/* INFORMATION */}
+      {/* =====================================================
+          INFORMATION
+      ===================================================== */}
 
       <section className="sijo-info-section">
+
 
         <div className="sijo-info-card">
 
           <Tag size={23} />
+
 
           <div>
 
@@ -407,11 +513,14 @@ function Sijo() {
               Product Pricing
             </strong>
 
+
             <p>
+
               Prices shown are based on the current
               product information provided by Krishna
               Enterprises. Please contact us to confirm
               current pricing and availability.
+
             </p>
 
           </div>
@@ -423,28 +532,36 @@ function Sijo() {
 
           <ShieldCheck size={23} />
 
+
           <div>
 
             <strong>
               Product Specification
             </strong>
 
+
             <p>
-              Sijo Diamond kitchen sinks listed here
+
+              Sijo kitchen sinks listed here
               are specified as 1 mm grade according
               to the current product information.
+
             </p>
 
           </div>
 
         </div>
 
+
       </section>
 
 
-      {/* CONTACT */}
+      {/* =====================================================
+          CONTACT
+      ===================================================== */}
 
       <section className="sijo-contact">
+
 
         <div>
 
@@ -454,18 +571,24 @@ function Sijo() {
 
 
           <h2>
+
             Looking for a
+
             <br />
+
             <span>
               different size?
             </span>
+
           </h2>
 
 
           <p>
+
             Contact Krishna Enterprises for product
             availability, additional sizes and
             enquiries.
+
           </p>
 
         </div>
@@ -473,17 +596,22 @@ function Sijo() {
 
         <div className="sijo-contact-buttons">
 
+
           <a
             href="tel:9892778195"
             className="sijo-contact-call"
           >
+
             Call Us
+
             <ArrowRight size={17} />
+
           </a>
 
 
           <a
-            href="https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20I%20would%20like%20to%20know%20about%20your%20Sijo%20Diamond%20kitchen%20sink%20collection."
+
+            href="https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20I%20would%20like%20to%20know%20about%20your%20Sijo%20kitchen%20sink%20collection."
 
             target="_blank"
 
@@ -498,14 +626,19 @@ function Sijo() {
 
           </a>
 
+
         </div>
+
 
       </section>
 
 
-      {/* FOOTER */}
+      {/* =====================================================
+          FOOTER
+      ===================================================== */}
 
       <footer className="sijo-footer">
+
 
         <div>
 
@@ -521,13 +654,19 @@ function Sijo() {
 
 
         <div>
+
           © {new Date().getFullYear()} Krishna Enterprises
+
         </div>
+
 
       </footer>
 
+
     </div>
+
   );
+
 }
 
 

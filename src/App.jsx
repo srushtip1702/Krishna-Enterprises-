@@ -14,15 +14,11 @@ import {
 } from "lucide-react";
 
 import { useState } from "react";
-
+import KitchenSinks from "./KitchenSinks";
 import SijoJindal from "./SijoJindal";
 import Sijo from "./Sijo";
 
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 
 function App() {
@@ -92,6 +88,9 @@ function App() {
 
   /* =====================================================
      FEATURED PRODUCTS
+
+     WE WILL REPLACE THESE WITH YOUR REAL PRODUCTS
+     LATER.
   ===================================================== */
 
   const products = [
@@ -161,7 +160,9 @@ function App() {
 
               <img
                 src="/logo.jpeg"
+
                 alt="Krishna Enterprises"
+
                 className="company-logo"
 
                 onError={(event) => {
@@ -264,7 +265,9 @@ function App() {
 
             <a
               href="tel:9892778195"
+
               className="nav-contact"
+
               onClick={() =>
                 setMenuOpen(false)
               }
@@ -280,17 +283,24 @@ function App() {
 
 
           <button
+
             className="mobile-menu"
+
             onClick={() =>
               setMenuOpen(!menuOpen)
             }
+
             aria-label="Open navigation menu"
           >
 
             {menuOpen ? (
+
               <X size={25} />
+
             ) : (
+
               <Menu size={25} />
+
             )}
 
           </button>
@@ -508,21 +518,17 @@ function App() {
               (category, index) => (
 
                 <article
+
                   className="category-card"
 
                   key={index}
 
                   onClick={() => {
 
-                    if (
-                      category.title ===
-                      "Kitchen Sinks"
-                    ) {
-
-                      window.location.href =
-                        "/kitchen-sinks/sijo-jindal";
-
-                    }
+                    if (category.title === "Kitchen Sinks") {
+  window.location.href =
+    "/kitchen-sinks";
+}
 
                   }}
 
@@ -540,6 +546,7 @@ function App() {
 
 
                     <img
+
                       src={category.image}
 
                       alt={category.title}
@@ -596,8 +603,11 @@ function App() {
 
 
                     <ArrowRight
+
                       className="category-arrow"
+
                       size={18}
+
                     />
 
 
@@ -677,13 +687,18 @@ function App() {
 
 
                     <img
+
                       src={product.image}
+
                       alt={product.name}
+
                     />
 
 
                     <div className="product-badge">
+
                       WHOLESALE
+
                     </div>
 
 
@@ -711,11 +726,14 @@ function App() {
 
 
                       <span>
+
                         Contact for pricing
+
                       </span>
 
 
                       <a
+
                         href="https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20I%20am%20interested%20in%20your%20products."
 
                         target="_blank"
@@ -749,6 +767,7 @@ function App() {
 
 
             <a
+
               href="https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20please%20share%20your%20complete%20product%20catalogue."
 
               target="_blank"
@@ -785,9 +804,11 @@ function App() {
 
 
             <img
+
               src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85"
 
               alt="Modern bathroom"
+
             />
 
 
@@ -815,7 +836,9 @@ function App() {
 
 
             <div className="section-label">
+
               ABOUT US
+
             </div>
 
 
@@ -924,7 +947,9 @@ function App() {
 
 
             <div className="section-label">
+
               GET IN TOUCH
+
             </div>
 
 
@@ -957,11 +982,14 @@ function App() {
 
 
             <a
+
               href="tel:9892778195"
+
               className="contact-box"
             >
 
               <Phone size={23} />
+
 
               <div>
 
@@ -979,11 +1007,14 @@ function App() {
 
 
             <a
+
               href="tel:9322533550"
+
               className="contact-box"
             >
 
               <Phone size={23} />
+
 
               <div>
 
@@ -1001,11 +1032,14 @@ function App() {
 
 
             <a
+
               href="tel:8355874251"
+
               className="contact-box"
             >
 
               <Phone size={23} />
+
 
               <div>
 
@@ -1023,6 +1057,7 @@ function App() {
 
 
             <a
+
               href="https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
 
               target="_blank"
@@ -1033,6 +1068,7 @@ function App() {
             >
 
               <MessageCircle size={23} />
+
 
               <div>
 
@@ -1099,18 +1135,24 @@ function App() {
 
 
             <div className="footer-logo">
+
               KE
+
             </div>
 
 
             <div>
 
               <strong>
+
                 KRISHNA ENTERPRISES
+
               </strong>
 
               <span>
+
                 Sanitaryware · Bathroom Products · Wholesale
+
               </span>
 
             </div>
@@ -1168,6 +1210,7 @@ function App() {
       ===================================================== */}
 
       <a
+
         href="https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
 
         target="_blank"
@@ -1195,46 +1238,43 @@ function App() {
    ROUTER
 ========================================================= */
 
+/* =========================================================
+   WEBSITE ROUTES
+========================================================= */
+
 function AppRouter() {
-
   return (
+    <Routes>
 
-    <BrowserRouter>
-
-      <Routes>
-
-
-        {/* MAIN WEBSITE */}
-
-        <Route
-          path="/"
-          element={<App />}
-        />
+      {/* MAIN WEBSITE */}
+      <Route
+        path="/"
+        element={<App />}
+      />
 
 
-        {/* SIJO JINDAL */}
-
-        <Route
-          path="/kitchen-sinks/sijo-jindal"
-          element={<SijoJindal />}
-        />
-
-
-        {/* SIJO */}
-
-        <Route
-          path="/kitchen-sinks/sijo"
-          element={<Sijo />}
-        />
+      {/* KITCHEN SINK COLLECTIONS */}
+      <Route
+        path="/kitchen-sinks"
+        element={<KitchenSinks />}
+      />
 
 
-      </Routes>
+      {/* SIJO JINDAL - SJ */}
+      <Route
+        path="/kitchen-sinks/sj"
+        element={<SijoJindal />}
+      />
 
-    </BrowserRouter>
 
+      {/* SIJO - S */}
+      <Route
+        path="/kitchen-sinks/s"
+        element={<Sijo />}
+      />
+
+    </Routes>
   );
-
 }
-
 
 export default AppRouter;
