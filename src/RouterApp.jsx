@@ -7,40 +7,38 @@ import {
 import App from "./App";
 import KitchenSinks from "./kitchensinks";
 import Sijo from "./sijo";
-import SijoJindal from "./sijojindal";
+import SijoJindal from "./SijoJindal";
 
 function RouterApp() {
   return (
     <BrowserRouter>
-
       <Routes>
 
-        {/* HOME */}
+        {/* HOME PAGE */}
         <Route
           path="/"
           element={<App />}
         />
 
-        {/* KITCHEN SINK CATEGORIES */}
+        {/* KITCHEN SINKS CATEGORY */}
         <Route
           path="/kitchen-sinks"
           element={<KitchenSinks />}
         />
 
-        {/* SIJO JINDAL */}
+        {/* SIJO JINDAL - SJ PRODUCTS */}
         <Route
           path="/kitchen-sinks/sj"
           element={<SijoJindal />}
         />
 
-        {/* SIJO */}
+        {/* SIJO - S PRODUCTS */}
         <Route
           path="/kitchen-sinks/s"
           element={<Sijo />}
         />
 
       </Routes>
-
     </BrowserRouter>
   );
 }

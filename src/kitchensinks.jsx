@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./KitchenSinks.css";
+import "./kitchensinks.css";
 
 function KitchenSinks() {
 

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./Sijo.css";
+import "./sijo.css";
 
 const products = [
   {
