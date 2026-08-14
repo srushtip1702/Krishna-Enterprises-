@@ -32,6 +32,14 @@ const sijoProducts = [
     image: "/products/kitchen-sinks/sijo-jindal/SJ 18x16.jpeg",
   },
 
+  // NEW PRODUCT
+  {
+    size: "19x16",
+    displaySize: "19 × 16",
+    price: 1400,
+    image: "/products/kitchen-sinks/sijo-jindal/SJ 19x16.jpeg",
+  },
+
   {
     size: "20x17",
     displaySize: "20 × 17",
@@ -280,9 +288,7 @@ function SijoJindal() {
                 key={product.size}
               >
 
-                {/* =================================================
-                    PRODUCT IMAGE
-                ================================================= */}
+                {/* PRODUCT IMAGE */}
 
                 <div className="sijo-product-image">
 
@@ -327,9 +333,7 @@ function SijoJindal() {
                 </div>
 
 
-                {/* =================================================
-                    PRODUCT INFORMATION
-                ================================================= */}
+                {/* PRODUCT INFORMATION */}
 
                 <div className="sijo-product-info">
 
