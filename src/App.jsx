@@ -14,10 +14,6 @@ import {
 } from "lucide-react";
 
 import { useState } from "react";
-// Fixed imports with proper casing matching your file tree
-import SijoJindal from "./sijojindal";
-
-import { Routes, Route } from "react-router-dom";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -99,12 +95,14 @@ function App() {
                 className="company-logo"
                 onError={(event) => {
                   event.currentTarget.style.display = "none";
+
                   if (event.currentTarget.nextElementSibling) {
                     event.currentTarget.nextElementSibling.style.display =
                       "grid";
                   }
                 }}
               />
+
               <div className="temporary-logo">KE</div>
             </div>
 
@@ -114,22 +112,46 @@ function App() {
             </div>
           </a>
 
-          <nav className={menuOpen ? "nav-links mobile-open" : "nav-links"}>
-            <a href="#home" onClick={() => setMenuOpen(false)}>
+          <nav
+            className={
+              menuOpen ? "nav-links mobile-open" : "nav-links"
+            }
+          >
+            <a
+              href="#home"
+              onClick={() => setMenuOpen(false)}
+            >
               Home
             </a>
-            <a href="#categories" onClick={() => setMenuOpen(false)}>
+
+            <a
+              href="#categories"
+              onClick={() => setMenuOpen(false)}
+            >
               Categories
             </a>
-            <a href="#products" onClick={() => setMenuOpen(false)}>
+
+            <a
+              href="#products"
+              onClick={() => setMenuOpen(false)}
+            >
               Products
             </a>
-            <a href="#about" onClick={() => setMenuOpen(false)}>
+
+            <a
+              href="#about"
+              onClick={() => setMenuOpen(false)}
+            >
               About
             </a>
-            <a href="#contact" onClick={() => setMenuOpen(false)}>
+
+            <a
+              href="#contact"
+              onClick={() => setMenuOpen(false)}
+            >
               Contact
             </a>
+
             <a
               href="tel:9892778195"
               className="nav-contact"
@@ -145,7 +167,11 @@ function App() {
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Open navigation menu"
           >
-            {menuOpen ? <X size={25} /> : <Menu size={25} />}
+            {menuOpen ? (
+              <X size={25} />
+            ) : (
+              <Menu size={25} />
+            )}
           </button>
         </div>
       </header>
@@ -169,14 +195,17 @@ function App() {
             </h1>
 
             <p className="hero-description">
-              From elegant basins and modern faucets to sanitaryware, showers,
-              kitchen sinks and bathroom essentials — Krishna Enterprises
-              brings quality products and dependable wholesale supply together
-              under one roof.
+              From elegant basins and modern faucets to sanitaryware,
+              showers, kitchen sinks and bathroom essentials —
+              Krishna Enterprises brings quality products and
+              dependable wholesale supply together under one roof.
             </p>
 
             <div className="hero-buttons">
-              <a href="#categories" className="btn-primary">
+              <a
+                href="#categories"
+                className="btn-primary"
+              >
                 Explore Collection
                 <ArrowRight size={18} />
               </a>
@@ -212,6 +241,7 @@ function App() {
         <section className="trust-bar">
           <div className="trust-item">
             <ShieldCheck size={23} />
+
             <div>
               <strong>Quality Products</strong>
               <span>Selected for reliability</span>
@@ -220,6 +250,7 @@ function App() {
 
           <div className="trust-item">
             <Sparkles size={23} />
+
             <div>
               <strong>Modern Designs</strong>
               <span>Contemporary bathroom solutions</span>
@@ -230,10 +261,16 @@ function App() {
         {/* =====================================================
             CATEGORIES
         ===================================================== */}
-        <section id="categories" className="categories-section">
+        <section
+          id="categories"
+          className="categories-section"
+        >
           <div className="section-top">
             <div>
-              <div className="section-label">OUR COLLECTION</div>
+              <div className="section-label">
+                OUR COLLECTION
+              </div>
+
               <h2>
                 Everything Your
                 <br />
@@ -242,8 +279,9 @@ function App() {
             </div>
 
             <p>
-              Explore our range of bathroom and kitchen products designed for
-              homes, projects, retailers and businesses.
+              Explore our range of bathroom and kitchen
+              products designed for homes, projects,
+              retailers and businesses.
             </p>
           </div>
 
@@ -253,13 +291,18 @@ function App() {
                 className="category-card"
                 key={index}
                 onClick={() => {
-                  if (category.title === "Kitchen Sinks") {
-                    window.location.href = "/kitchen-sinks";
+                  if (
+                    category.title === "Kitchen Sinks"
+                  ) {
+                    window.location.href =
+                      "/kitchen-sinks";
                   }
                 }}
                 style={{
                   cursor:
-                    category.title === "Kitchen Sinks" ? "pointer" : "default",
+                    category.title === "Kitchen Sinks"
+                      ? "pointer"
+                      : "default",
                 }}
               >
                 <div className="category-image">
@@ -267,22 +310,32 @@ function App() {
                     src={category.image}
                     alt={category.title}
                     onError={(event) => {
-                      console.log("Image not found:", category.image);
+                      console.log(
+                        "Image not found:",
+                        category.image
+                      );
                     }}
                   />
 
-                  <div className="category-number">0{index + 1}</div>
+                  <div className="category-number">
+                    0{index + 1}
+                  </div>
                 </div>
 
                 <div className="category-content">
-                  <div className="category-icon">{category.icon}</div>
+                  <div className="category-icon">
+                    {category.icon}
+                  </div>
 
                   <div>
                     <h3>{category.title}</h3>
                     <p>{category.description}</p>
                   </div>
 
-                  <ArrowRight className="category-arrow" size={18} />
+                  <ArrowRight
+                    className="category-arrow"
+                    size={18}
+                  />
                 </div>
               </article>
             ))}
@@ -292,10 +345,16 @@ function App() {
         {/* =====================================================
             FEATURED PRODUCTS
         ===================================================== */}
-        <section id="products" className="products-section">
+        <section
+          id="products"
+          className="products-section"
+        >
           <div className="section-top">
             <div>
-              <div className="section-label">FEATURED PRODUCTS</div>
+              <div className="section-label">
+                FEATURED PRODUCTS
+              </div>
+
               <h2>
                 Quality That
                 <br />
@@ -304,25 +363,40 @@ function App() {
             </div>
 
             <p>
-              Explore a selection from our product range. Our complete catalogue
-              will include product photos, specifications and pricing.
+              Explore a selection from our product range.
+              Our complete catalogue will include product
+              photos, specifications and pricing.
             </p>
           </div>
 
           <div className="product-grid">
             {products.map((product, index) => (
-              <article className="product-card" key={index}>
+              <article
+                className="product-card"
+                key={index}
+              >
                 <div className="product-image">
-                  <img src={product.image} alt={product.name} />
-                  <div className="product-badge">WHOLESALE</div>
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                  />
+
+                  <div className="product-badge">
+                    WHOLESALE
+                  </div>
                 </div>
 
                 <div className="product-details">
-                  <div className="product-category">{product.category}</div>
+                  <div className="product-category">
+                    {product.category}
+                  </div>
+
                   <h3>{product.name}</h3>
 
                   <div className="product-bottom">
-                    <span>Contact for pricing</span>
+                    <span>
+                      Contact for pricing
+                    </span>
 
                     <a
                       href="https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20I%20am%20interested%20in%20your%20products."
@@ -354,7 +428,10 @@ function App() {
         {/* =====================================================
             ABOUT
         ===================================================== */}
-        <section id="about" className="about-section">
+        <section
+          id="about"
+          className="about-section"
+        >
           <div className="about-image">
             <img
               src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85"
@@ -364,12 +441,16 @@ function App() {
             <div className="about-image-card">
               <span>KRISHNA</span>
               <strong>ENTERPRISES</strong>
-              <small>SAKINAKA · MUMBAI</small>
+              <small>
+                SAKINAKA · MUMBAI
+              </small>
             </div>
           </div>
 
           <div className="about-content">
-            <div className="section-label">ABOUT US</div>
+            <div className="section-label">
+              ABOUT US
+            </div>
 
             <h2>
               Your Trusted
@@ -378,19 +459,22 @@ function App() {
             </h2>
 
             <p>
-              Krishna Enterprises is a wholesale supplier of bathroom and
-              sanitaryware products based in Sakinaka, Mumbai.
+              Krishna Enterprises is a wholesale supplier
+              of bathroom and sanitaryware products based
+              in Sakinaka, Mumbai.
             </p>
 
             <p>
-              From everyday bathroom essentials to modern fittings,
-              sanitaryware and kitchen solutions, we aim to provide quality
-              products at competitive wholesale rates.
+              From everyday bathroom essentials to modern
+              fittings, sanitaryware and kitchen solutions,
+              we aim to provide quality products at
+              competitive wholesale rates.
             </p>
 
             <p>
-              Our focus is simple — dependable products, professional service
-              and long-term business relationships.
+              Our focus is simple — dependable products,
+              professional service and long-term business
+              relationships.
             </p>
 
             <div className="about-points">
@@ -401,7 +485,9 @@ function App() {
 
               <div>
                 <span>02</span>
-                <strong>Competitive Pricing</strong>
+                <strong>
+                  Competitive Pricing
+                </strong>
               </div>
 
               <div>
@@ -415,9 +501,14 @@ function App() {
         {/* =====================================================
             CONTACT
         ===================================================== */}
-        <section id="contact" className="contact-section">
+        <section
+          id="contact"
+          className="contact-section"
+        >
           <div className="contact-intro">
-            <div className="section-label">GET IN TOUCH</div>
+            <div className="section-label">
+              GET IN TOUCH
+            </div>
 
             <h2>
               Let's Build
@@ -426,31 +517,44 @@ function App() {
             </h2>
 
             <p>
-              Looking for bathroom or kitchen products in bulk? Contact Krishna
-              Enterprises for product availability, wholesale rates and
+              Looking for bathroom or kitchen products
+              in bulk? Contact Krishna Enterprises for
+              product availability, wholesale rates and
               enquiries.
             </p>
           </div>
 
           <div className="contact-area">
-            <a href="tel:9892778195" className="contact-box">
+            <a
+              href="tel:9892778195"
+              className="contact-box"
+            >
               <Phone size={23} />
+
               <div>
                 <span>Ramdhata Tiwari</span>
                 <strong>9892778195</strong>
               </div>
             </a>
 
-            <a href="tel:9322533550" className="contact-box">
+            <a
+              href="tel:9322533550"
+              className="contact-box"
+            >
               <Phone size={23} />
+
               <div>
                 <span>Umesh Awasthi</span>
                 <strong>9322533550</strong>
               </div>
             </a>
 
-            <a href="tel:8355874251" className="contact-box">
+            <a
+              href="tel:8355874251"
+              className="contact-box"
+            >
               <Phone size={23} />
+
               <div>
                 <span>Krishna Tiwari</span>
                 <strong>8355874251</strong>
@@ -464,20 +568,26 @@ function App() {
               className="contact-box whatsapp-box"
             >
               <MessageCircle size={23} />
+
               <div>
                 <span>QUICK ENQUIRY</span>
-                <strong>Chat on WhatsApp</strong>
+                <strong>
+                  Chat on WhatsApp
+                </strong>
               </div>
             </a>
           </div>
 
           <div className="address-box">
             <MapPin size={25} />
+
             <div>
               <span>VISIT OUR LOCATION</span>
+
               <strong>
-                PVK Compound, Gala No. 04, Opposite Lucky Hotel, Kherani Road,
-                Sakinaka, Mumbai – 400072
+                PVK Compound, Gala No. 04, Opposite Lucky
+                Hotel, Kherani Road, Sakinaka, Mumbai –
+                400072
               </strong>
             </div>
           </div>
@@ -490,11 +600,18 @@ function App() {
       <footer className="footer">
         <div className="footer-inner">
           <div className="footer-brand">
-            <div className="footer-logo">KE</div>
+            <div className="footer-logo">
+              KE
+            </div>
+
             <div>
-              <strong>KRISHNA ENTERPRISES</strong>
+              <strong>
+                KRISHNA ENTERPRISES
+              </strong>
+
               <span>
-                Sanitaryware · Bathroom Products · Wholesale
+                Sanitaryware · Bathroom Products ·
+                Wholesale
               </span>
             </div>
           </div>
@@ -508,7 +625,8 @@ function App() {
           </div>
 
           <div className="footer-copy">
-            © {new Date().getFullYear()} Krishna Enterprises
+            © {new Date().getFullYear()} Krishna
+            Enterprises
           </div>
         </div>
       </footer>
@@ -529,26 +647,4 @@ function App() {
   );
 }
 
-/* =========================================================
-   WEBSITE ROUTES
-========================================================= */
-
-function AppRouter() {
-  return (
-    <Routes>
-      {/* MAIN WEBSITE */}
-      <Route path="/" element={<App />} />
-
-      {/* KITCHEN SINK COLLECTIONS */}
-      <Route path="/kitchen-sinks" element={<KitchenSinks />} />
-
-      {/* SIJO JINDAL - SJ */}
-      <Route path="/kitchen-sinks/sj" element={<SijoJindal />} />
-
-      {/* SIJO - S */}
-      <Route path="/kitchen-sinks/s" element={<Sijo />} />
-    </Routes>
-  );
-}
-
-export default AppRouter;
+export default App;
