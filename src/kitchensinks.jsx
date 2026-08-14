@@ -8,17 +8,14 @@ function KitchenSinks() {
   return (
     <div className="kitchen-sinks-page">
 
-      {/* HEADER */}
-
       <section className="kitchen-sinks-header">
 
-        <div className="section-label">
+        <div className="ks-label">
           KITCHEN SINKS
         </div>
 
         <h1>
-          Our Sink
-          <span> Collections.</span>
+          Our Sink <span>Collections.</span>
         </h1>
 
         <p>
@@ -29,20 +26,13 @@ function KitchenSinks() {
       </section>
 
 
-      {/* COLLECTION CARDS */}
-
       <section className="sink-brand-grid">
 
-
-        {/* ==========================================
-            SIJO JINDAL
-        ========================================== */}
+        {/* SIJO JINDAL */}
 
         <article
           className="sink-brand-card"
-          onClick={() =>
-            navigate("/kitchen-sinks/sj")
-          }
+          onClick={() => navigate("/kitchen-sinks/sj")}
         >
 
           <div className="sink-brand-image">
@@ -61,7 +51,7 @@ function KitchenSinks() {
 
           <div className="sink-brand-content">
 
-            <div className="section-label">
+            <div className="ks-small-label">
               SJ
             </div>
 
@@ -78,15 +68,11 @@ function KitchenSinks() {
             <button
               type="button"
               onClick={(event) => {
-
                 event.stopPropagation();
-
                 navigate("/kitchen-sinks/sj");
-
               }}
             >
-              View Products
-              <span>→</span>
+              View Products <span>→</span>
             </button>
 
           </div>
@@ -94,16 +80,11 @@ function KitchenSinks() {
         </article>
 
 
-
-        {/* ==========================================
-            SIJO
-        ========================================== */}
+        {/* SIJO */}
 
         <article
           className="sink-brand-card"
-          onClick={() =>
-            navigate("/kitchen-sinks/s")
-          }
+          onClick={() => navigate("/kitchen-sinks/s")}
         >
 
           <div className="sink-brand-image">
@@ -122,7 +103,7 @@ function KitchenSinks() {
 
           <div className="sink-brand-content">
 
-            <div className="section-label">
+            <div className="ks-small-label">
               S
             </div>
 
@@ -139,21 +120,16 @@ function KitchenSinks() {
             <button
               type="button"
               onClick={(event) => {
-
                 event.stopPropagation();
-
                 navigate("/kitchen-sinks/s");
-
               }}
             >
-              View Products
-              <span>→</span>
+              View Products <span>→</span>
             </button>
 
           </div>
 
         </article>
-
 
       </section>
 

@@ -5,44 +5,35 @@ import {
 } from "react-router-dom";
 
 import App from "./App";
-import KitchenSinks from "./kitchensinks";
-import Sijo from "./sijo";
-
+import KitchenSinks from "./KitchenSinks";
+import Sijo from "./Sijo";
+import SijoJindal from "./SijoJindal";
 
 function RouterApp() {
-
   return (
-
     <BrowserRouter>
 
       <Routes>
 
         {/* HOME */}
-
         <Route
           path="/"
           element={<App />}
         />
 
-
-        {/* KITCHEN SINK COLLECTIONS */}
-
+        {/* KITCHEN SINK CATEGORIES */}
         <Route
           path="/kitchen-sinks"
           element={<KitchenSinks />}
         />
 
-
-        {/* SIJO JINDAL - SJ */}
-
+        {/* SIJO JINDAL */}
         <Route
           path="/kitchen-sinks/sj"
           element={<SijoJindal />}
         />
 
-
-        {/* SIJO - S */}
-
+        {/* SIJO */}
         <Route
           path="/kitchen-sinks/s"
           element={<Sijo />}
@@ -51,9 +42,7 @@ function RouterApp() {
       </Routes>
 
     </BrowserRouter>
-
   );
 }
-
 
 export default RouterApp;

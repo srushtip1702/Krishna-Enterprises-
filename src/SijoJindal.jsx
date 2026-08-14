@@ -1,243 +1,77 @@
-import {
-  ArrowLeft,
-  ArrowRight,
-  MessageCircle,
-  Ruler,
-  ShieldCheck,
-  Tag,
-} from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import "./SijoJindal.css";
 
-import "./sijo-jindal.css";
-
-
-const sijoProducts = [
+const products = [
   {
-    size: "15x12",
-    displaySize: "15 × 12",
-    price: 1160,
-    image: "/products/kitchen-sinks/sijo-jindal/SJ 15x12.jpeg",
+    size: "14 × 16",
+    image: "/products/kitchen-sinks/sijo-jindal/SJ%2014x16.jpeg",
+    grade: "0.8 mm",
+    price: "₹1,190",
   },
-
   {
-    size: "14x16",
-    displaySize: "14 × 16",
-    price: 1190,
-    image: "/products/kitchen-sinks/sijo-jindal/SJ 14x16.jpeg",
+    size: "15 × 12",
+    image: "/products/kitchen-sinks/sijo-jindal/SJ%2015x12.jpeg",
+    grade: "0.8 mm",
+    price: "₹1,160",
   },
-
   {
-    size: "18x16",
-    displaySize: "18 × 16",
-    price: 1328,
-    image: "/products/kitchen-sinks/sijo-jindal/SJ 18x16.jpeg",
+    size: "18 × 16",
+    image: "/products/kitchen-sinks/sijo-jindal/SJ%2018x16.jpeg",
+    grade: "0.8 mm",
+    price: "₹1,328",
   },
-
-  // NEW PRODUCT
   {
-    size: "19x16",
-    displaySize: "19 × 16",
-    price: 1400,
-    image: "/products/kitchen-sinks/sijo-jindal/SJ 19x16.jpeg",
+    size: "19 × 16",
+    image: "/products/kitchen-sinks/sijo-jindal/SJ%2019x16.jpeg",
+    grade: "0.8 mm",
+    price: "₹1,400",
   },
-
   {
-    size: "20x17",
-    displaySize: "20 × 17",
-    price: 1636,
-    image: "/products/kitchen-sinks/sijo-jindal/SJ 20x17.jpeg",
+    size: "20 × 17",
+    image: "/products/kitchen-sinks/sijo-jindal/SJ%2020x17.jpeg",
+    grade: "0.8 mm",
+    price: "₹1,636",
   },
-
   {
-    size: "21x18",
-    displaySize: "21 × 18",
-    price: 1660,
-    image: "/products/kitchen-sinks/sijo-jindal/SJ 21x18.jpeg",
+    size: "21 × 18",
+    image: "/products/kitchen-sinks/sijo-jindal/SJ%2021x18.jpeg",
+    grade: "0.8 mm",
+    price: "₹1,660",
   },
-
   {
-    size: "22x18",
-    displaySize: "22 × 18",
-    price: 1920,
-    image: "/products/kitchen-sinks/sijo-jindal/SJ 22x18.jpeg",
+    size: "22 × 18",
+    image: "/products/kitchen-sinks/sijo-jindal/SJ%2022x18.jpeg",
+    grade: "0.8 mm",
+    price: "₹1,920",
   },
-
   {
-    size: "24x18",
-    displaySize: "24 × 18",
-    price: 1940,
-    image: "/products/kitchen-sinks/sijo-jindal/SJ 24x18.jpeg",
+    size: "24 × 18",
+    image: "/products/kitchen-sinks/sijo-jindal/SJ%2024x18.jpeg",
+    grade: "0.8 mm",
+    price: "₹1,940",
   },
 ];
 
-
 function SijoJindal() {
 
+  const navigate = useNavigate();
+
   return (
+    <div className="sijojindal-page">
 
-    <div className="sijo-page">
+      <div className="sijojindal-breadcrumb">
 
-      {/* =====================================================
-          TOP BAR
-      ===================================================== */}
-
-      <div className="sijo-topbar">
-
-        <div className="sijo-topbar-inner">
-
-          <span>
-            KRISHNA ENTERPRISES
-          </span>
-
-          <span>
-            KITCHEN SINK COLLECTION
-          </span>
-
-        </div>
-
-      </div>
-
-
-      {/* =====================================================
-          HEADER
-      ===================================================== */}
-
-      <header className="sijo-header">
-
-        <a
-          href="/"
-          className="sijo-back"
-        >
-
-          <ArrowLeft size={17} />
-
-          Back to Website
-
-        </a>
-
-
-        <div className="sijo-brand">
-
-          <img
-            src="/logo.jpeg"
-            alt="Krishna Enterprises"
-          />
-
-          <div>
-
-            <strong>
-              KRISHNA
-            </strong>
-
-            <span>
-              ENTERPRISES
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <a
-          href="tel:9892778195"
-          className="sijo-call"
-        >
-          Call Us
-        </a>
-
-      </header>
-
-
-      {/* =====================================================
-          HERO
-      ===================================================== */}
-
-      <section className="sijo-hero">
-
-        <div className="sijo-hero-content">
-
-          <div className="sijo-label">
-            KITCHEN SINKS · SIJO JINDAL
-          </div>
-
-
-          <h1>
-            Sijo Jindal
-            <br />
-            <span>Kitchen Sink Collection.</span>
-          </h1>
-
-
-          <p>
-            Explore our available Sijo Jindal kitchen
-            sinks, selected for dependable quality,
-            practical dimensions and everyday performance.
-          </p>
-
-
-          <div className="sijo-hero-stats">
-
-            <div>
-
-              <strong>
-                {sijoProducts.length}
-              </strong>
-
-              <span>
-                Available Sizes
-              </span>
-
-            </div>
-
-
-            <div>
-
-              <strong>
-                0.8 mm
-              </strong>
-
-              <span>
-                Grade
-              </span>
-
-            </div>
-
-
-            <div>
-
-              <strong>
-                SS
-              </strong>
-
-              <span>
-                Material
-              </span>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      {/* =====================================================
-          BREADCRUMB
-      ===================================================== */}
-
-      <div className="sijo-breadcrumb">
-
-        <a href="/">
+        <span onClick={() => navigate("/")}>
           Home
-        </a>
+        </span>
 
-        <ArrowRight size={14} />
+        <span>→</span>
 
-        <span>
+        <span onClick={() => navigate("/kitchen-sinks")}>
           Kitchen Sinks
         </span>
 
-        <ArrowRight size={14} />
+        <span>→</span>
 
         <strong>
           Sijo Jindal
@@ -246,343 +80,100 @@ function SijoJindal() {
       </div>
 
 
-      {/* =====================================================
-          PRODUCTS
-      ===================================================== */}
+      <section className="sijojindal-header">
 
-      <main className="sijo-products-section">
+        <div className="sijojindal-label">
+          KITCHEN SINKS · SJ
+        </div>
 
-        <div className="sijo-section-heading">
+        <h1>
+          Sijo Jindal
+        </h1>
 
-          <div>
+        <p>
+          Explore the available Sijo Jindal kitchen
+          sink sizes and specifications.
+        </p>
 
-            <div className="sijo-label">
-              SIJO JINDAL
+      </section>
+
+
+      <section className="sijojindal-products">
+
+        {products.map((product, index) => (
+
+          <article
+            className="sijojindal-product-card"
+            key={product.size}
+          >
+
+            <div className="sijojindal-product-image">
+
+              <img
+                src={product.image}
+                alt={`Sijo Jindal ${product.size} kitchen sink`}
+              />
+
+              <div className="sijojindal-number">
+                {String(index + 1).padStart(2, "0")}
+              </div>
+
+              <div className="sijojindal-tag">
+                SIJO JINDAL
+              </div>
+
             </div>
 
-            <h2>
-              Available
-              <br />
-              <span>Sizes.</span>
-            </h2>
 
-          </div>
+            <div className="sijojindal-product-info">
 
+              <div className="sijojindal-product-label">
+                SIJO JINDAL
+              </div>
 
-          <p>
-            Browse the currently available Sijo Jindal
-            sink sizes. Each product is supplied with
-            a 0.8 mm grade specification.
-          </p>
-
-        </div>
+              <h2>
+                Sijo Jindal
+              </h2>
 
 
-        <div className="sijo-product-grid">
+              <div className="sijojindal-specs">
 
-          {sijoProducts.map(
-            (product, index) => (
-
-              <article
-                className="sijo-product-card"
-                key={product.size}
-              >
-
-                {/* PRODUCT IMAGE */}
-
-                <div className="sijo-product-image">
-
-                  <img
-                    className={
-                      product.size === "21x18"
-                        ? "sijo-rotate-left"
-                        : ""
-                    }
-
-                    src={product.image}
-
-                    alt={`Sijo Jindal ${product.displaySize} Kitchen Sink`}
-
-                    onError={(event) => {
-
-                      console.error(
-                        "Image not found:",
-                        product.image
-                      );
-
-                      event.currentTarget.style.opacity =
-                        "0.25";
-
-                    }}
-                  />
-
-
-                  <div className="sijo-product-number">
-
-                    {String(index + 1).padStart(2, "0")}
-
-                  </div>
-
-
-                  <div className="sijo-brand-badge">
-
-                    SIJO JINDAL
-
-                  </div>
-
+                <div>
+                  <span>SIZE</span>
+                  <strong>{product.size}</strong>
                 </div>
 
-
-                {/* PRODUCT INFORMATION */}
-
-                <div className="sijo-product-info">
-
-                  <div className="sijo-product-category">
-
-                    KITCHEN SINK
-
-                  </div>
-
-
-                  <h3>
-
-                    Sijo Jindal
-
-                  </h3>
-
-
-                  <div className="sijo-details">
-
-                    <div className="sijo-detail">
-
-                      <Ruler size={16} />
-
-                      <div>
-
-                        <span>
-                          SIZE
-                        </span>
-
-                        <strong>
-                          {product.displaySize}
-                        </strong>
-
-                      </div>
-
-                    </div>
-
-
-                    <div className="sijo-detail">
-
-                      <ShieldCheck size={16} />
-
-                      <div>
-
-                        <span>
-                          GRADE
-                        </span>
-
-                        <strong>
-                          0.8 mm
-                        </strong>
-
-                      </div>
-
-                    </div>
-
-                  </div>
-
-
-                  <div className="sijo-price-row">
-
-                    <div>
-
-                      <span>
-                        PRICE
-                      </span>
-
-                      <strong>
-                        ₹{product.price.toLocaleString("en-IN")}
-                      </strong>
-
-                    </div>
-
-
-                    <a
-                      href={`https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20I%20am%20interested%20in%20the%20Sijo%20Jindal%20${encodeURIComponent(product.displaySize)}%20kitchen%20sink.`}
-
-                      target="_blank"
-
-                      rel="noopener noreferrer"
-
-                      className="sijo-enquire"
-                    >
-
-                      <MessageCircle size={16} />
-
-                      Enquire
-
-                    </a>
-
-                  </div>
-
+                <div>
+                  <span>GRADE</span>
+                  <strong>{product.grade}</strong>
                 </div>
 
-              </article>
-
-            )
-          )}
-
-        </div>
-
-      </main>
+              </div>
 
 
-      {/* =====================================================
-          INFORMATION
-      ===================================================== */}
+              <div className="sijojindal-price-row">
 
-      <section className="sijo-info-section">
+                <div>
+                  <span>PRICE</span>
+                  <strong>{product.price}</strong>
+                </div>
 
-        <div className="sijo-info-card">
+                <button type="button">
+                  Enquire
+                </button>
 
-          <Tag size={23} />
+              </div>
 
-          <div>
+            </div>
 
-            <strong>
-              Product Pricing
-            </strong>
+          </article>
 
-            <p>
-              Prices shown are based on the current
-              product information provided by Krishna
-              Enterprises. Please contact us to confirm
-              current pricing and availability.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <div className="sijo-info-card">
-
-          <ShieldCheck size={23} />
-
-          <div>
-
-            <strong>
-              Product Specification
-            </strong>
-
-            <p>
-              Sijo Jindal kitchen sinks listed here are
-              specified as 0.8 mm grade according to the
-              current product information provided.
-            </p>
-
-          </div>
-
-        </div>
+        ))}
 
       </section>
-
-
-      {/* =====================================================
-          CONTACT
-      ===================================================== */}
-
-      <section className="sijo-contact">
-
-        <div>
-
-          <div className="sijo-label">
-            NEED ASSISTANCE?
-          </div>
-
-          <h2>
-            Looking for a
-            <br />
-            <span>different size?</span>
-          </h2>
-
-          <p>
-            Contact Krishna Enterprises for product
-            availability, additional sizes and
-            enquiries.
-          </p>
-
-        </div>
-
-
-        <div className="sijo-contact-buttons">
-
-          <a
-            href="tel:9892778195"
-            className="sijo-contact-call"
-          >
-
-            Call Us
-
-            <ArrowRight size={17} />
-
-          </a>
-
-
-          <a
-            href="https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20I%20would%20like%20to%20know%20about%20your%20Sijo%20Jindal%20kitchen%20sink%20collection."
-
-            target="_blank"
-
-            rel="noopener noreferrer"
-
-            className="sijo-contact-whatsapp"
-          >
-
-            <MessageCircle size={17} />
-
-            WhatsApp
-
-          </a>
-
-        </div>
-
-      </section>
-
-
-      {/* =====================================================
-          FOOTER
-      ===================================================== */}
-
-      <footer className="sijo-footer">
-
-        <div>
-
-          <strong>
-            KRISHNA ENTERPRISES
-          </strong>
-
-          <span>
-            Sanitaryware · Bathroom Products · Wholesale
-          </span>
-
-        </div>
-
-
-        <div>
-
-          © {new Date().getFullYear()} Krishna Enterprises
-
-        </div>
-
-      </footer>
 
     </div>
-
   );
-
 }
-
 
 export default SijoJindal;
