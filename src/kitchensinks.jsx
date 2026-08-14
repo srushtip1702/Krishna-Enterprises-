@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import "./KitchenSinks.css";
 
 function KitchenSinks() {
-
   const navigate = useNavigate();
 
   return (
@@ -25,7 +24,6 @@ function KitchenSinks() {
 
       </section>
 
-
       <section className="sink-brand-grid">
 
         {/* SIJO JINDAL */}
@@ -47,7 +45,6 @@ function KitchenSinks() {
             </div>
 
           </div>
-
 
           <div className="sink-brand-content">
 
@@ -79,7 +76,6 @@ function KitchenSinks() {
 
         </article>
 
-
         {/* SIJO */}
 
         <article
@@ -99,7 +95,6 @@ function KitchenSinks() {
             </div>
 
           </div>
-
 
           <div className="sink-brand-content">
 

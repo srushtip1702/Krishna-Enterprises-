@@ -22,9 +22,12 @@
 
 .kitchen-sinks-header h1 {
   margin: 12px 0 15px;
+
   font-family: Georgia, "Times New Roman", serif;
+
   font-size: 52px;
   font-weight: 400;
+
   color: #171717;
 }
 
@@ -34,9 +37,13 @@
 
 .kitchen-sinks-header p {
   max-width: 650px;
+
   margin: 0 auto;
+
   color: #686868;
+
   font-size: 15px;
+
   line-height: 1.8;
 }
 
@@ -44,10 +51,13 @@
 
 .sink-brand-grid {
   max-width: 1500px;
+
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 
   gap: 32px;
 }
@@ -56,7 +66,9 @@
 
 .sink-brand-card {
   background: #ffffff;
+
   border: 1px solid #ded8cc;
+
   cursor: pointer;
 
   transition:
@@ -71,18 +83,34 @@
     0 18px 40px rgba(0, 0, 0, 0.10);
 }
 
-/* IMAGE */
+/* =====================================================
+   FRONT / CATEGORY IMAGE
+===================================================== */
 
 .sink-brand-image {
   position: relative;
 
   width: 100%;
+
   height: 460px;
 
   background: #e9e6df;
 
   overflow: hidden;
+
+  /* Equal thin margin on all 4 sides */
+  padding: 12px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
 }
+
+/* ACTUAL IMAGE */
 
 .sink-brand-image img {
   width: 100%;
@@ -90,7 +118,15 @@
 
   display: block;
 
-  object-fit: cover;
+  /*
+    Show the COMPLETE product image.
+    Do not crop or stretch it.
+  */
+  object-fit: contain;
+
+  object-position: center;
+
+  background: #ffffff;
 }
 
 /* BADGE */
@@ -105,15 +141,18 @@
   height: 58px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
   background: #1b1b1b;
+
   color: #c69a50;
 
   font-family: Georgia, "Times New Roman", serif;
 
   font-size: 20px;
+
   font-weight: 600;
 }
 
@@ -127,6 +166,7 @@
   color: #a87932;
 
   font-size: 10px;
+
   font-weight: 700;
 
   letter-spacing: 3px;
@@ -138,6 +178,7 @@
   font-family: Georgia, "Times New Roman", serif;
 
   font-size: 38px;
+
   font-weight: 400;
 
   color: #161616;
@@ -151,6 +192,7 @@
   color: #666;
 
   font-size: 15px;
+
   line-height: 1.8;
 }
 
@@ -160,11 +202,13 @@
   border: none;
 
   background: #171717;
+
   color: #ffffff;
 
   padding: 15px 22px;
 
   font-size: 12px;
+
   font-weight: 700;
 
   cursor: pointer;
@@ -178,6 +222,7 @@
 
 .sink-brand-content button span {
   margin-left: 10px;
+
   font-size: 15px;
 }
 
@@ -199,6 +244,8 @@
 
   .sink-brand-image {
     height: 420px;
+
+    padding: 12px;
   }
 }
 
@@ -216,6 +263,8 @@
 
   .sink-brand-image {
     height: 320px;
+
+    padding: 10px;
   }
 
   .sink-brand-content {

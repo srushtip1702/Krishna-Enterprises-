@@ -1,8 +1,6 @@
 .sijo-page {
   min-height: 100vh;
-
   background: #f5f2eb;
-
   padding: 30px 4% 80px;
 }
 
@@ -12,11 +10,8 @@
   display: flex;
   align-items: center;
   gap: 14px;
-
   margin-bottom: 50px;
-
   color: #777;
-
   font-size: 14px;
 }
 
@@ -36,37 +31,28 @@
 
 .sijo-header {
   max-width: 900px;
-
   margin: 0 auto 55px;
-
   text-align: center;
 }
 
 .sijo-label {
   color: #a87932;
-
   font-size: 11px;
   font-weight: 700;
-
   letter-spacing: 4px;
 }
 
 .sijo-header h1 {
   margin: 10px 0;
-
   font-family: Georgia, "Times New Roman", serif;
-
   font-size: 56px;
   font-weight: 400;
-
   color: #171717;
 }
 
 .sijo-header p {
   color: #6d6d6d;
-
   font-size: 15px;
-
   line-height: 1.7;
 }
 
@@ -74,13 +60,10 @@
 
 .sijo-products {
   max-width: 1500px;
-
   margin: 0 auto;
 
   display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
   gap: 32px;
 }
@@ -89,9 +72,7 @@
 
 .sijo-product-card {
   background: #ffffff;
-
   border: 1px solid #ded8cc;
-
   overflow: hidden;
 
   transition:
@@ -106,7 +87,7 @@
     0 18px 40px rgba(0, 0, 0, 0.10);
 }
 
-/* IMAGE */
+/* IMAGE AREA */
 
 .sijo-product-image {
   position: relative;
@@ -117,7 +98,18 @@
   background: #e8e5de;
 
   overflow: hidden;
+
+  /* equal margin on all 4 sides */
+  padding: 12px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* ACTUAL PRODUCT IMAGE */
 
 .sijo-product-image img {
   width: 100%;
@@ -125,7 +117,13 @@
 
   display: block;
 
-  object-fit: cover;
+  /* keep complete image visible */
+  object-fit: contain;
+
+  /* keeps image centered */
+  object-position: center;
+
+  background: #ffffff;
 }
 
 /* NUMBER */
@@ -144,7 +142,6 @@
   justify-content: center;
 
   background: #1b1b1b;
-
   color: #c69a50;
 
   font-size: 13px;
@@ -162,7 +159,6 @@
   padding: 10px 16px;
 
   background: #ffffff;
-
   color: #1b1b1b;
 
   font-size: 10px;
@@ -213,9 +209,7 @@
 
 .sijo-specs div {
   display: flex;
-
   flex-direction: column;
-
   gap: 7px;
 }
 
@@ -267,7 +261,6 @@
   border: none;
 
   background: #171717;
-
   color: #ffffff;
 
   padding: 15px 22px;
@@ -287,7 +280,6 @@
 /* TABLET */
 
 @media (max-width: 900px) {
-
   .sijo-products {
     grid-template-columns: 1fr;
   }
@@ -300,7 +292,6 @@
 /* MOBILE */
 
 @media (max-width: 500px) {
-
   .sijo-page {
     padding: 25px 18px 60px;
   }
@@ -311,6 +302,7 @@
 
   .sijo-product-image {
     height: 330px;
+    padding: 10px;
   }
 
   .sijo-product-info {
