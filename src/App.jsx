@@ -14,9 +14,9 @@ import {
 } from "lucide-react";
 
 import { useState } from "react";
-import KitchenSinks from "./KitchenSinks";
+import KitchenSinks from "./kitchensinks";
 import SijoJindal from "./SijoJindal";
-import Sijo from "./Sijo";
+import Sijo from "./sijo";
 
 import { Routes, Route } from "react-router-dom";
 
