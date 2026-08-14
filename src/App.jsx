@@ -15,9 +15,9 @@ import {
 
 import { useState } from "react";
 // Fixed imports with proper casing matching your file tree
-import KitchenSinks from "./KitchenSinks";
-import SijoJindal from "./SijoJindal";
-import Sijo from "./Sijo";
+import KitchenSinks from "./kitchensinks";
+import SijoJindal from "./sijojindal";
+import Sijo from "./sijo";
 
 import { Routes, Route } from "react-router-dom";
 
