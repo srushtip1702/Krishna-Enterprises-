@@ -21,6 +21,7 @@ function App() {
   /* =====================================================
      PRODUCT CATEGORIES
   ===================================================== */
+
   const categories = [
     {
       title: "Wash Basins",
@@ -29,6 +30,7 @@ function App() {
         "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=85",
       icon: <Bath size={21} />,
     },
+
     {
       title: "Taps",
       description: "Modern fittings for every bathroom",
@@ -36,6 +38,7 @@ function App() {
         "https://images.unsplash.com/photo-1604709177225-055f99402ea3?auto=format&fit=crop&w=1000&q=85",
       icon: <Droplets size={21} />,
     },
+
     {
       title: "Showers",
       description: "Complete shower and bathing solutions",
@@ -43,6 +46,7 @@ function App() {
         "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85",
       icon: <ShowerHead size={21} />,
     },
+
     {
       title: "Kitchen Sinks",
       description: "Practical and stylish kitchen sink solutions",
@@ -51,9 +55,12 @@ function App() {
     },
   ];
 
+  return (
+    <div>
       {/* =====================================================
           NAVBAR
       ===================================================== */}
+
       <header className="navbar">
         <div className="nav-container">
           <a href="#home" className="brand">
@@ -77,6 +84,7 @@ function App() {
 
             <div className="brand-text">
               <div className="brand-name">KRISHNA</div>
+
               <div className="brand-subtitle">ENTERPRISES</div>
             </div>
           </a>
@@ -98,13 +106,6 @@ function App() {
               onClick={() => setMenuOpen(false)}
             >
               Categories
-            </a>
-
-            <a
-              href="#products"
-              onClick={() => setMenuOpen(false)}
-            >
-              Products
             </a>
 
             <a
@@ -145,10 +146,11 @@ function App() {
         </div>
       </header>
 
-      {/* =====================================================
-          HERO
-      ===================================================== */}
       <main>
+        {/* =====================================================
+            HERO
+        ===================================================== */}
+
         <section id="home" className="hero">
           <div className="hero-overlay"></div>
 
@@ -207,12 +209,14 @@ function App() {
         {/* =====================================================
             TRUST BAR
         ===================================================== */}
+
         <section className="trust-bar">
           <div className="trust-item">
             <ShieldCheck size={23} />
 
             <div>
               <strong>Quality Products</strong>
+
               <span>Selected for reliability</span>
             </div>
           </div>
@@ -222,6 +226,7 @@ function App() {
 
             <div>
               <strong>Modern Designs</strong>
+
               <span>Contemporary bathroom solutions</span>
             </div>
           </div>
@@ -230,6 +235,7 @@ function App() {
         {/* =====================================================
             CATEGORIES
         ===================================================== */}
+
         <section
           id="categories"
           className="categories-section"
@@ -298,6 +304,7 @@ function App() {
 
                   <div>
                     <h3>{category.title}</h3>
+
                     <p>{category.description}</p>
                   </div>
 
@@ -312,91 +319,9 @@ function App() {
         </section>
 
         {/* =====================================================
-            FEATURED PRODUCTS
-        ===================================================== */}
-        <section
-          id="products"
-          className="products-section"
-        >
-          <div className="section-top">
-            <div>
-              <div className="section-label">
-                FEATURED PRODUCTS
-              </div>
-
-              <h2>
-                Quality That
-                <br />
-                <span>Speaks for Itself.</span>
-              </h2>
-            </div>
-
-            <p>
-              Explore a selection from our product range.
-              Our complete catalogue will include product
-              photos, specifications and pricing.
-            </p>
-          </div>
-
-          <div className="product-grid">
-            {products.map((product, index) => (
-              <article
-                className="product-card"
-                key={index}
-              >
-                <div className="product-image">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                  />
-
-                  <div className="product-badge">
-                    WHOLESALE
-                  </div>
-                </div>
-
-                <div className="product-details">
-                  <div className="product-category">
-                    {product.category}
-                  </div>
-
-                  <h3>{product.name}</h3>
-
-                  <div className="product-bottom">
-                    <span>
-                      Contact for pricing
-                    </span>
-
-                    <a
-                      href="https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20I%20am%20interested%20in%20your%20products."
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Enquire
-                      <ArrowRight size={15} />
-                    </a>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className="catalogue-button">
-            <a
-              href="https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20please%20share%20your%20complete%20product%20catalogue."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="dark-button"
-            >
-              Request Complete Catalogue
-              <ArrowRight size={17} />
-            </a>
-          </div>
-        </section>
-
-        {/* =====================================================
             ABOUT
         ===================================================== */}
+
         <section
           id="about"
           className="about-section"
@@ -409,10 +334,10 @@ function App() {
 
             <div className="about-image-card">
               <span>KRISHNA</span>
+
               <strong>ENTERPRISES</strong>
-              <small>
-                SAKINAKA · MUMBAI
-              </small>
+
+              <small>SAKINAKA · MUMBAI</small>
             </div>
           </div>
 
@@ -449,18 +374,19 @@ function App() {
             <div className="about-points">
               <div>
                 <span>01</span>
+
                 <strong>Quality Focused</strong>
               </div>
 
               <div>
                 <span>02</span>
-                <strong>
-                  Competitive Pricing
-                </strong>
+
+                <strong>Competitive Pricing</strong>
               </div>
 
               <div>
                 <span>03</span>
+
                 <strong>Reliable Service</strong>
               </div>
             </div>
@@ -470,6 +396,7 @@ function App() {
         {/* =====================================================
             CONTACT
         ===================================================== */}
+
         <section
           id="contact"
           className="contact-section"
@@ -502,6 +429,7 @@ function App() {
 
               <div>
                 <span>Ramdhata Tiwari</span>
+
                 <strong>9892778195</strong>
               </div>
             </a>
@@ -514,6 +442,7 @@ function App() {
 
               <div>
                 <span>Umesh Awasthi</span>
+
                 <strong>9322533550</strong>
               </div>
             </a>
@@ -526,6 +455,7 @@ function App() {
 
               <div>
                 <span>Krishna Tiwari</span>
+
                 <strong>8355874251</strong>
               </div>
             </a>
@@ -540,9 +470,8 @@ function App() {
 
               <div>
                 <span>QUICK ENQUIRY</span>
-                <strong>
-                  Chat on WhatsApp
-                </strong>
+
+                <strong>Chat on WhatsApp</strong>
               </div>
             </a>
           </div>
@@ -566,6 +495,7 @@ function App() {
       {/* =====================================================
           FOOTER
       ===================================================== */}
+
       <footer className="footer">
         <div className="footer-inner">
           <div className="footer-brand">
@@ -574,9 +504,7 @@ function App() {
             </div>
 
             <div>
-              <strong>
-                KRISHNA ENTERPRISES
-              </strong>
+              <strong>KRISHNA ENTERPRISES</strong>
 
               <span>
                 Sanitaryware · Bathroom Products ·
@@ -586,11 +514,21 @@ function App() {
           </div>
 
           <div className="footer-links">
-            <a href="#home">Home</a>
-            <a href="#categories">Categories</a>
-            <a href="#products">Products</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <a href="#home">
+              Home
+            </a>
+
+            <a href="#categories">
+              Categories
+            </a>
+
+            <a href="#about">
+              About
+            </a>
+
+            <a href="#contact">
+              Contact
+            </a>
           </div>
 
           <div className="footer-copy">
@@ -603,6 +541,7 @@ function App() {
       {/* =====================================================
           FLOATING WHATSAPP
       ===================================================== */}
+
       <a
         href="https://wa.me/919892778195?text=Hello%20Krishna%20Enterprises%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
         target="_blank"
