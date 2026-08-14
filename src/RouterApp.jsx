@@ -5,9 +5,8 @@ import {
 } from "react-router-dom";
 
 import App from "./App";
-import KitchenSinks from "./KitchenSinks";
-import SijoJindal from "./SijoJindal";
-import Sijo from "./Sijo";
+import KitchenSinks from "./kitchensinks";
+import Sijo from "./sijo";
 
 
 function RouterApp() {
